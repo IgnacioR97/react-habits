@@ -4,38 +4,37 @@ import { links, social } from "./data";
 import logo from "./logo.svg";
 
 const Navbar = () => {
-  const [showLinks, setShowLinks] = useState(false);
-  const linksContainerRef = useRef(null);
-  const linksRef = useRef(null);
+  const [openContainer, setOpenContainer] = useState(false);
+  const linkRefContainer = useRef(null);
+  const linkRef = useRef(null);
 
   useEffect(() => {
-    const linksHeight = linksRef.current.getBoundingClientRect().height;
+    const length = linkRefContainer.current.getBoundingClientRect().height;
+    console.log(length);
 
-    if (showLinks) {
-      linksContainerRef.current.style.height = `${linksHeight}px`;
+    if (openContainer) {
+      linkRefContainer.current.style.height = `${length}px`;
     } else {
-      linksContainerRef.current.style.height = `0px`;
+      linkRefContainer.current.style.height = "0px";
     }
-  }, [showLinks]);
+  }, [openContainer]);
+
   return (
     <div className="nav-center">
       <div className="nav-header">
         <img src={logo} alt="logo" className="logo" />
-        <button className="nav-toggle" onClick={() => setShowLinks(!showLinks)}>
+        <button
+          className="nav-toggle"
+          onClick={() => setOpenContainer(!openContainer)}
+        >
           <FaBars />
         </button>
       </div>
 
-      <div
-        // className={`${
-        //   showLinks ? "links-container show-container" : "links-container"
-        // }`}
-        className="links-container"
-        ref={linksContainerRef}
-      >
-        <ul className="links" ref={linksRef}>
+      <div className="links-container" ref={linkRefContainer}>
+        <ul className="links" ref={linkRef}>
           {links.map((link) => {
-            const { id, text, url } = link;
+            const { url, text, id } = link;
             return (
               <li key={id}>
                 <a href={url}>{text}</a>
@@ -45,16 +44,18 @@ const Navbar = () => {
         </ul>
       </div>
 
-      <ul className="social-icons">
-        {social.map((link) => {
-          const { id, url, icon } = link;
-          return (
-            <li key={id}>
-              <a href={url}>{icon}</a>
-            </li>
-          );
-        })}
-      </ul>
+      <div className="social-icons">
+        <ul className="social-icons">
+          {social.map((social) => {
+            const { id, url, icon } = social;
+            return (
+              <li key={id}>
+                <a href={url}>{icon}</a>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
     </div>
   );
 };
