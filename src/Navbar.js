@@ -4,15 +4,22 @@ import { links, social } from "./data";
 import logo from "./logo.svg";
 
 const Navbar = () => {
+  const [showLinks, setShowLinks] = useState(false);
   return (
     <div className="nav-center">
       <div className="nav-header">
         <img src={logo} alt="logo" className="logo" />
-        <button className="nav-toggle" onClick={() => console.log("lol")}>
+        <button className="nav-toggle" onClick={() => setShowLinks(!showLinks)}>
           <FaBars />
         </button>
       </div>
-      <div className="links-container">
+
+      <div
+        // className={`${
+        //   showLinks ? "links-container show-container" : "links-container"
+        // }`}
+        className="links-container"
+      >
         <ul className="links">
           {links.map((link) => {
             const { id, text, url } = link;
@@ -24,6 +31,7 @@ const Navbar = () => {
           })}
         </ul>
       </div>
+
       <ul className="social-icons">
         {social.map((link) => {
           const { id, url, icon } = link;
