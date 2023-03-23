@@ -271,3 +271,76 @@ ul {
 }
 
 /* ============= PROJECT CSS =============== */
+.jobs-center {
+  width: var(--max-width);
+  margin: 6rem auto;
+  display: flex;
+  column-gap: 3rem;
+}
+
+/* buttons */
+.btn-container {
+  display: flex;
+  flex-direction: column;
+  column-gap: 2rem;
+  row-gap: 1rem;
+  align-items: center;
+  justify-content: start;
+}
+
+.job-btn {
+  padding: 0.2rem 5rem;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: var(--grey-800);
+  transition: color .3s linear;
+  width: 14rem;
+}
+
+.job-btn:hover {
+  color: #14B8A6;
+  border-left: 2px solid #14B8A6;
+}
+
+.active-btn {
+  color: #14B8A6;
+  border-left: 2px solid #14B8A6;
+}
+
+/* Main content */
+.job-info h3 {
+  color: var(--black);
+  margin-bottom: 0.8rem;
+  font-weight: 500;
+}
+
+.job-company {
+  padding: 0.5rem;
+  background-color: #CBD5E1;
+  display: inline-block;
+  border-radius: var(--borderRadius);
+  margin-bottom: 0.8rem;
+}
+
+.job-date {
+  color: var(--grey-500);
+  margin-bottom: 2rem;
+}
+
+.job-desc {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 2rem;
+  margin-bottom: 1.4rem;
+}
+
+.job-icon {
+  color: #14B8A6;
+  width: 1.4rem;
+}
+
+.job-desc p {
+  line-height: 1.7;
+}
