@@ -272,9 +272,10 @@ ul {
 
 /* ============= PROJECT CSS =============== */
 .jobs-center {
-  width: var(--max-width);
-  margin: 6rem auto;
+  width: 80vw;
+  margin: 5rem auto;
   display: flex;
+  max-width: var(--max-width);
   column-gap: 3rem;
 }
 
@@ -294,13 +295,14 @@ ul {
   background: transparent;
   cursor: pointer;
   color: var(--grey-800);
-  transition: color .3s linear;
+  transition: all .3s linear;
   width: 14rem;
+  border-left: 2px solid transparent;
 }
 
 .job-btn:hover {
   color: #14B8A6;
-  border-left: 2px solid #14B8A6;
+  border-left-color: #14B8A6;
 }
 
 .active-btn {
@@ -312,7 +314,6 @@ ul {
 .job-info h3 {
   color: var(--black);
   margin-bottom: 0.8rem;
-  font-weight: 500;
 }
 
 .job-company {
@@ -338,9 +339,43 @@ ul {
 
 .job-icon {
   color: #14B8A6;
-  width: 1.4rem;
+  width: 1.7rem;
 }
 
 .job-desc p {
   line-height: 1.7;
+}
+
+@media screen and (max-width: 60em) {
+  .jobs-center {
+    flex-direction: column;
+  }
+
+  .btn-container {
+    flex-direction: row;
+    gap: 0;
+    justify-content: center;
+    width: 30vw;
+    margin: 0 auto 4rem auto;
+  }
+
+  .job-btn {
+    padding: 0;
+    width: auto;
+    margin: 0 0.6rem;
+    border-left: 0;
+    border-bottom: 2px solid transparent;
+  }
+
+  .job-icon {
+    width: 4rem;
+  }
+
+  .job-btn:hover {
+    border-bottom-color: #14B8A6;
+  }
+
+  .active-btn {
+    border-bottom: 2px solid #14B8A6;
+  }
 }
