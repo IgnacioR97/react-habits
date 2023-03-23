@@ -359,7 +359,7 @@ ul {
     box-shadow: -2px 0px var(--primary-500);
   }
 
-  .active-btn {
+  /* .active-btn {
     box-shadow: -2px 0px var(--primary-500);
-  }
+  } */
 }
