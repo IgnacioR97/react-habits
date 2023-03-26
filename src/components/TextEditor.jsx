@@ -1,6 +1,8 @@
 import Quill from "quill";
 import "quill/dist/quill.snow.css";
 import { useCallback } from "react";
+import { RxFontBold } from "react-icons/rx";
+import { TbOld } from "react-icons/tb";
 
 const TOOLBAR_OPTIONS = [
   [{ header: [1, 2, 3, 4, 5, 6, false] }],

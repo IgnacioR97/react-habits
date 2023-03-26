@@ -46,7 +46,6 @@ body {
   margin-top: 1rem;
 }
 
-
 .ql-snow .ql-picker:not(.ql-color-picker):not(.ql-icon-picker) svg {
   display: none;
 }
@@ -61,8 +60,4 @@ body {
 
 .ql-formats button {
   margin-top: 1rem;
-}
-
-.ql-snow .ql-picker {
-  color: orange;
 }
