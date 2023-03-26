@@ -61,3 +61,14 @@ body {
 .ql-formats button {
   margin-top: 1rem;
 }
+
+.ql-snow.ql-toolbar button,
+.ql-snow .ql-toolbar button {
+  height: 33px;
+  width: 33px;
+  stroke: #fff;
+}
+
+.ql-snow .ql-stroke {
+  stroke: #fff;
+}
