@@ -1,7 +1,6 @@
 import Quill from "quill";
 import "quill/dist/quill.snow.css";
 import { useCallback } from "react";
-import Toolbar from "./Toolbar";
 
 const TOOLBAR_OPTIONS = [
   [{ header: [1, 2, 3, 4, 5, 6, false] }],
@@ -25,12 +24,6 @@ const TextEditor = () => {
     });
   }, []);
 
-  return (
-    <div>
-      <Toolbar options={TOOLBAR_OPTIONS} />
-      <div className="container" ref={wrapperRef}></div>
-    </div>
-  );
+  return <div className="container" ref={wrapperRef}></div>;
 };
-
 export default TextEditor;

@@ -1,5 +1,3 @@
-import React from "react";
-
 const Toolbar = ({ options }) => {
   return (
     <div className="toolbar-container">
