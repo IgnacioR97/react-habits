@@ -14,8 +14,8 @@ const TOOLBAR_OPTIONS = [
   ["clean"],
 ];
 
-const icons = Quill.import("ui/icons");
-icons.bold = <h1>hello</h1>;
+// const icons = Quill.import("ui/icons");
+// icons.bold = <h1>hello</h1>;
 
 const TextEditor = () => {
   const wrapperRef = useCallback((wrapper) => {
