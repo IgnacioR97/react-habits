@@ -62,3 +62,7 @@ body {
 .ql-formats button {
   margin-top: 1rem;
 }
+
+.ql-snow .ql-picker {
+  color: orange;
+}
