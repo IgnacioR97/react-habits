@@ -1,5 +1,6 @@
 import { RxUpload } from "react-icons/rx";
 import Timer from "../cards/Timer";
+import Tips from "../cards/Tips";
 import TodoList from "../cards/TodoList";
 
 const SideCards = () => {
@@ -13,6 +14,7 @@ const SideCards = () => {
       <div className="cards">
         <TodoList />
         <Timer />
+        <Tips />
       </div>
     </div>
   );

@@ -321,8 +321,8 @@ main {
 
 .circular-progress {
   position: relative;
-  height: 150px;
-  width: 150px;
+  height: 160px;
+  width: 160px;
   background-color: #D3D3D3;
   border-radius: 50%;
   display: flex;
@@ -334,8 +334,8 @@ main {
 .circular-progress:before {
   content: "";
   position: absolute;
-  height: 92%;
-  width: 92%;
+  height: 87%;
+  width: 87%;
   background-color: #fff;
   border-radius: 50%;
 }
@@ -370,7 +370,7 @@ main {
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
-  width: 30rem;
+  width: 28rem;
   margin: 1rem auto 0 auto;
 }
 
@@ -382,4 +382,20 @@ main {
 .duration-text {
   font-size: 1.5rem;
   color: #0F0F0EB2;
+}
+
+.btn-start {
+  background-color: var(--color-primary);
+  color: var(--color-text);
+}
+
+.clock-icon {
+  font-size: 1.8rem;
+  color: var(--color-primary);
+}
+
+.btn-5min {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
 }

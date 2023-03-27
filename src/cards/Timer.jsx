@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { RxClock } from "react-icons/rx";
 
 const Timer = () => {
   const [elapsedTime, setElapsedTime] = useState(0);
@@ -50,14 +51,14 @@ const Timer = () => {
   };
 
   const handleStopTime = () => {
-    setElapsedTime(0);
+    setIsRunning(false);
   };
 
   return (
     <div className="card timer-card">
       <div className="timer-buttons">
         {isRunning || (
-          <button onClick={handleStartClick} className="btn">
+          <button onClick={handleStartClick} className="btn btn-start">
             Start
           </button>
         )}
@@ -66,8 +67,8 @@ const Timer = () => {
             <button onClick={handleStopTime} className="btn">
               Pause
             </button>
-            <button onClick={handleAddTime} className="btn">
-              Add 5 min
+            <button onClick={handleAddTime} className="btn btn-5min">
+              <RxClock className="clock-icon" /> Add 5 min
             </button>
           </>
         )}
