@@ -29,6 +29,11 @@ const TextEditor = () => {
     });
   }, []);
 
-  return <div className="container" ref={wrapperRef}></div>;
+  return (
+    <>
+      <RxFontBold />
+      <div className="container" ref={wrapperRef}></div>
+    </>
+  );
 };
 export default TextEditor;
