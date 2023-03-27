@@ -4,6 +4,8 @@ import { useCallback } from "react";
 import { RxFontBold } from "react-icons/rx";
 import { TbOld } from "react-icons/tb";
 
+import logo from "../../src/logo-removebg-preview.png";
+
 const TOOLBAR_OPTIONS = [
   [{ header: [1, 2, 3, 4, 5, 6, false] }],
   [{ list: "ordered" }, { list: "bullet" }],
@@ -24,6 +26,7 @@ const TextEditor = () => {
     const editor = document.createElement("div");
     wrapper.append(editor);
     new Quill(editor, {
+      placeholder: "Enter text here...",
       theme: "snow",
       modules: { toolbar: TOOLBAR_OPTIONS },
     });
@@ -31,7 +34,7 @@ const TextEditor = () => {
 
   return (
     <>
-      <RxFontBold />
+      <img src={logo} alt="logo" className="logo" />
       <div className="container" ref={wrapperRef}></div>
     </>
   );
