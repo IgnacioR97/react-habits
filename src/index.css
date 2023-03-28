@@ -160,12 +160,12 @@ main {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
 .card {
   background: #FFFFFF;
-  box-shadow: -5px 5px 16px rgba(0, 0, 0, 0.04);
+  box-shadow: -5px 5px 16px rgba(0, 0, 0, 0.1);
   border-radius: 15px;
   overflow: auto;
 }
@@ -205,7 +205,7 @@ main {
 .todo-card {
   padding: 2rem;
   width: 100%;
-  height: 21rem;
+  height: 18rem;
 }
 
 .item {
@@ -316,13 +316,14 @@ main {
 .timer-card {
   padding: 2rem;
   width: 100%;
-  height: 27rem;
+  height: 25rem;
+  overflow: hidden;
 }
 
 .circular-progress {
   position: relative;
-  height: 160px;
-  width: 160px;
+  height: 145px;
+  width: 145px;
   background-color: #D3D3D3;
   border-radius: 50%;
   display: flex;
@@ -398,4 +399,46 @@ main {
   display: flex;
   align-items: center;
   gap: 0.6rem;
+}
+
+/* //////////////////// TIPS //////////////////// */
+
+.card-tips {
+  padding: 2rem;
+  width: 100%;
+  height: 17rem;
+  background-color: #EDF0F6;
+  text-align: left;
+  overflow: hidden;
+}
+
+.tips-header {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #000000;
+}
+
+.tips-info {
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: #00000097;
+  margin-top: 0.4rem;
+}
+
+.btn-container {
+  text-align: center;
+}
+
+.tips-btn {
+  margin-top: 1rem;
+  text-align: center;
+  cursor: pointer;
+  border: 0;
+  color: var(--color-text);
+  font-size: 1.4rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  border-radius: 10px;
+  padding: 1rem 2rem;
+  background-color: var(--color-primary);
 }
