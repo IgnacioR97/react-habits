@@ -7,28 +7,61 @@ const TipsModal = ({ setOpenModal }) => {
   const [currentNum, setCurrentNum] = useState(0);
   const { tip } = tips[currentNum];
 
+  const closeModal = () => {
+    setOpenModal(false);
+  };
+
+  const increaseNum = () => {
+    let newNum = currentNum + 1;
+    console.log(newNum);
+    if (newNum > tips.length - 1) {
+      setCurrentNum(0);
+    } else {
+      setCurrentNum(newNum);
+    }
+  };
+
+  const decreaseNum = () => {
+    let newNum = currentNum - 1;
+    console.log(newNum);
+    if (newNum === -1) {
+      setCurrentNum(tips.length - 1);
+    } else {
+      setCurrentNum(newNum);
+    }
+  };
+
   return (
     <>
-      <div className="background" onClick={() => setOpenModal(false)}></div>
+      <div className="background" onClick={closeModal}></div>
       <div className="modal">
-        <h4>{tip}</h4>
-        <div className="buttons">
-          <button
-            className="btn-left"
-            onClick={() => setCurrentNum(1 - currentNum)}
-          >
-            <RxArrowLeft />
-          </button>
-          <button
-            className="btn-right"
-            onClick={() => setCurrentNum(1 + currentNum)}
-          >
-            <RxArrowRight />
+        <div>
+          <h4>{tip}</h4>
+          <div className="buttons">
+            <button className="btn-left" onClick={decreaseNum}>
+              <RxArrowLeft />
+            </button>
+            <div className="selectors">
+              {tips.map((tip, index) => {
+                return (
+                  <div
+                    key={index}
+                    className={`selector ${
+                      index === currentNum ? "active" : ""
+                    }`}
+                    onClick={() => setCurrentNum(index)}
+                  ></div>
+                );
+              })}
+            </div>
+            <button className="btn-right" onClick={increaseNum}>
+              <RxArrowRight />
+            </button>
+          </div>
+          <button className="close-btn" onClick={closeModal}>
+            <MdOutlineClose />
           </button>
         </div>
-        <button className="close-btn" onClick={() => setOpenModal(false)}>
-          <MdOutlineClose />
-        </button>
       </div>
     </>
   );

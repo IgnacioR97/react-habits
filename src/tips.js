@@ -1,11 +1,7 @@
 const tips = [
   {
-    id: 0,
-    tip: "Here are some productivity tips to improve your focus and concentration",
-  },
-  {
     id: 1,
-    tip: "Leave your phone in another room when you study so you don't get distracted. Don't worry, your friends can wait for 45 minutes.",
+    tip: "Leave your phone in another room when you study so you don't get distracted. Don't worry, your friends can wait.",
   },
   {
     id: 2,
