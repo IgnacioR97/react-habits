@@ -60,7 +60,7 @@ function TodoList() {
 
   return (
     <div className="card todo-card">
-      <h2 className="header">Inbox</h2>
+      <h2 className="header">Todo-list</h2>
       <ul className={`${items.length === 0 ? "empty-list" : "todo-list"}`}>
         {items.map((todo) => {
           const { item, id } = todo;

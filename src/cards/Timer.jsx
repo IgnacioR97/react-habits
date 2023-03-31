@@ -2,8 +2,16 @@ import { useState, useEffect } from "react";
 import { RxClock } from "react-icons/rx";
 
 const Timer = () => {
+  const time = [
+    { id: 1, time: 15 },
+    { id: 2, time: 20 },
+    { id: 3, time: 25 },
+    { id: 4, time: 30 },
+    { id: 5, time: 45 },
+  ];
+
   const [elapsedTime, setElapsedTime] = useState(0);
-  const [defaultTime, setDefaultTime] = useState(10);
+  const [defaultTime, setDefaultTime] = useState(25);
   const [extraTime, setExtraTime] = useState(0);
   const [totalTime, setTotalTime] = useState((defaultTime + extraTime) * 60);
   const [isRunning, setIsRunning] = useState(false);
@@ -58,9 +66,38 @@ const Timer = () => {
     <div className="card timer-card">
       <div className="timer-buttons">
         {isRunning || (
-          <button onClick={handleStartClick} className="btn btn-start">
-            Start
-          </button>
+          <>
+            <button onClick={handleStartClick} className="btn btn-start">
+              Start
+            </button>
+            <button className="btn btn-time">
+              <RxClock className="clock-icon clock-v2" />
+              <div className="clock-container">
+                <ul className="clock-list">
+                  {time.map((item) => {
+                    return (
+                      <li
+                        key={item.id}
+                        className={`${
+                          defaultTime === item.time
+                            ? "clock-item active"
+                            : "clock-item"
+                        }`}
+                        onClick={() => {
+                          console.log(item.time);
+                          setTotalTime(Math.floor(item.time / 60));
+                          setElapsedTime(0);
+                          setDefaultTime(item.time);
+                        }}
+                      >
+                        {item.time}min
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            </button>
+          </>
         )}
         {isRunning && (
           <>
