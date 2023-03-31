@@ -2,6 +2,7 @@
   --color-text: #FBFBFC;
   --color-secondary: #619DF0;
   --color-primary: #7AB5F8;
+  --color-primary-30: #a2cbfa;
 }
 
 html {
@@ -459,7 +460,7 @@ main {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(2px);
+  backdrop-filter: blur(5px);
   z-index: 100;
   transition: all 0.5s;
 }
@@ -513,7 +514,12 @@ main {
 
 .btn-right,
 .btn-left {
-  font-size: 1.6rem;
+  font-size: 2.6rem;
+  color: var(--color-primary);
+}
+
+.modal-icon {
+  cursor: pointer;
 }
 
 .close-btn {
@@ -535,6 +541,11 @@ main {
   background-color: #ccc;
   border-radius: 50%;
   cursor: pointer;
+  transition: background-color 0.3s linear;
+}
+
+.selector:hover {
+  background-color: var(--color-primary-30);
 }
 
 .selector.active {

@@ -39,7 +39,7 @@ const TipsModal = ({ setOpenModal }) => {
           <h4>{tip}</h4>
           <div className="buttons">
             <button className="btn-left" onClick={decreaseNum}>
-              <RxArrowLeft />
+              <RxArrowLeft className="modal-icon" />
             </button>
             <div className="selectors">
               {tips.map((tip, index) => {
@@ -55,7 +55,7 @@ const TipsModal = ({ setOpenModal }) => {
               })}
             </div>
             <button className="btn-right" onClick={increaseNum}>
-              <RxArrowRight />
+              <RxArrowRight className="modal-icon" />
             </button>
           </div>
           <button className="close-btn" onClick={closeModal}>

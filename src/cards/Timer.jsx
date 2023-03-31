@@ -3,7 +3,7 @@ import { RxClock } from "react-icons/rx";
 
 const Timer = () => {
   const [elapsedTime, setElapsedTime] = useState(0);
-  const [defaultTime, setDefaultTime] = useState(30);
+  const [defaultTime, setDefaultTime] = useState(10);
   const [extraTime, setExtraTime] = useState(0);
   const [totalTime, setTotalTime] = useState((defaultTime + extraTime) * 60);
   const [isRunning, setIsRunning] = useState(false);
