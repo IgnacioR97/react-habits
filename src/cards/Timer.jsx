@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { RxClock } from "react-icons/rx";
 
 const Timer = () => {
@@ -11,13 +11,14 @@ const Timer = () => {
   ];
 
   const [elapsedTime, setElapsedTime] = useState(0);
-  const [defaultTime, setDefaultTime] = useState(25);
+  const [defaultTime, setDefaultTime] = useState(45);
   const [extraTime, setExtraTime] = useState(0);
   const [totalTime, setTotalTime] = useState((defaultTime + extraTime) * 60);
   const [isRunning, setIsRunning] = useState(false);
+  const [displayTime, setDisplayTime] = useState(`${defaultTime}:00`);
+  const progressBar = useRef(null);
 
   useEffect(() => {
-    const progressBar = document.querySelector(".circular-progress");
     const valueContainer = document.querySelector(".value-container");
 
     let intervalId;
@@ -62,6 +63,14 @@ const Timer = () => {
     setIsRunning(false);
   };
 
+  const handleTimeItemClick = (item) => {
+    setDefaultTime(item.time);
+    setTotalTime(item.time * 60);
+    setElapsedTime(0);
+    setDisplayTime(`${item.time}:00`);
+    progressBar.current.style.backgroundColor = "#ffa500";
+  };
+
   return (
     <div className="card timer-card">
       <div className="timer-buttons">
@@ -83,12 +92,7 @@ const Timer = () => {
                             ? "clock-item active"
                             : "clock-item"
                         }`}
-                        onClick={() => {
-                          console.log(item.time);
-                          setTotalTime(Math.floor(item.time / 60));
-                          setElapsedTime(0);
-                          setDefaultTime(item.time);
-                        }}
+                        onClick={() => handleTimeItemClick(item)}
                       >
                         {item.time}min
                       </li>
@@ -111,8 +115,8 @@ const Timer = () => {
         )}
       </div>
       <div className="timer-flex">
-        <div className="circular-progress">
-          <div className="value-container">{Math.floor(totalTime / 60)}:00</div>
+        <div className="circular-progress" ref={progressBar}>
+          <div className="value-container">{displayTime}</div>
           <p className="text">Remaining</p>
         </div>
       </div>
