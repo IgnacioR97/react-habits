@@ -34,8 +34,8 @@ body {
 /* Scroll bar */
 /* Set the width and color of the scrollbar */
 .ql-editor::-webkit-scrollbar {
-  width: 8px;
-  background-color: #F0F0F080;
+  width: 10px;
+  background-color: #f0f0f080;
 }
 
 /* Set the color and style of the scrollbar thumb */
@@ -44,12 +44,15 @@ body {
   background-color: #D9D0D0;
   border: 2px solid #D9D0D0;
   border-radius: 5px;
+  width: 10px;
+  pointer-events: auto;
 }
 
 /* Set the color and style of the scrollbar thumb when hovered */
 .ql-editor::-webkit-scrollbar-thumb:hover {
   background-color: #ccc;
   border-color: #ccc;
+  cursor: pointer;
 }
 
 
@@ -62,11 +65,11 @@ main {
 }
 
 .container {
+  min-height: 100vh;
   height: 100%;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-
   gap: 2rem;
 }
 
@@ -104,12 +107,12 @@ main {
 }
 
 .ql-snow .ql-picker.ql-expanded .ql-picker-label {
-  color: #fff;
+  color: var(--color-text);
 }
 
 .ql-toolbar.ql-snow .ql-picker-label {
   border: none;
-  color: #fff;
+  color: var(--color-text);
 }
 
 .ql-formats button {
@@ -120,17 +123,17 @@ main {
 .ql-snow .ql-toolbar button {
   height: 33px;
   width: 33px;
-  stroke: #fff;
+  stroke: var(--color-text);
 }
 
 .ql-snow .ql-stroke {
-  stroke: #fff;
+  stroke: var(--color-text);
 }
 
 .ql-container {
   width: 62vw;
-  height: 80vh;
-  margin: 6% auto;
+  height: 90vh;
+  margin: 4% auto 0 auto;
 }
 
 .ql-container.ql-snow {
@@ -139,6 +142,7 @@ main {
 
 .ql-editor {
   border-radius: 10px;
+
 }
 
 .ql-editor {
@@ -158,6 +162,10 @@ main {
   left: 0%;
 }
 
+.main {
+  overflow: hidden;
+}
+
 /* //////////////////// CARDS //////////////////// */
 .side-cards {
   padding-left: 2rem;
@@ -172,7 +180,7 @@ main {
 }
 
 .card {
-  background: #FFFFFF;
+  background: var(--color-text);
   box-shadow: -5px 5px 16px rgba(0, 0, 0, 0.1);
   border-radius: 15px;
   overflow: auto;
@@ -346,7 +354,7 @@ main {
   position: absolute;
   height: 87%;
   width: 87%;
-  background-color: #fff;
+  background-color: var(--color-text);
   border-radius: 50%;
 }
 
@@ -434,17 +442,27 @@ main {
 
 .btn-time:hover .clock-list {
   display: block;
-  border-radius: 20px;
+  border-radius: 100px;
 }
 
 .clock-item {
-  background-color: #fff;
+  background-color: var(--color-text);
   padding: 0.2rem;
 }
 
 .clock-item.active {
   background-color: var(--color-primary);
   color: var(--color-text);
+}
+
+.clock-item.active:first-child {
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+.clock-item.active:last-child {
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 
 /* //////////////////// TIPS //////////////////// */

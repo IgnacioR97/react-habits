@@ -16,9 +16,10 @@ const Timer = () => {
   const [totalTime, setTotalTime] = useState((defaultTime + extraTime) * 60);
   const [isRunning, setIsRunning] = useState(false);
   const [displayTime, setDisplayTime] = useState(`${defaultTime}:00`);
-  const progressBar = useRef(null);
+  const progressBarRef = useRef(null);
 
   useEffect(() => {
+    const progressBar = progressBarRef.current;
     const valueContainer = document.querySelector(".value-container");
 
     let intervalId;
@@ -68,7 +69,7 @@ const Timer = () => {
     setTotalTime(item.time * 60);
     setElapsedTime(0);
     setDisplayTime(`${item.time}:00`);
-    progressBar.current.style.backgroundColor = "#ffa500";
+    progressBarRef.current.style.background = `conic-gradient(#d3d3d3)`;
   };
 
   return (
@@ -115,7 +116,7 @@ const Timer = () => {
         )}
       </div>
       <div className="timer-flex">
-        <div className="circular-progress" ref={progressBar}>
+        <div className="circular-progress" ref={progressBarRef}>
           <div className="value-container">{displayTime}</div>
           <p className="text">Remaining</p>
         </div>
