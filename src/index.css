@@ -1,5 +1,14 @@
-:root {
-  --color-text: #FBFBFC;
+.dark-theme {
+  --color-background: #1c254b;
+  --main-text: #fbfbfcba;
+  --color-secondary: #5370e1;
+  --color-primary: #4057af;
+  --color-primary-30: #8da3fc;
+}
+
+.light-theme {
+  --color-background: #f5f5f5;
+  --main-text: rgba(0, 0, 0, 0.6);
   --color-secondary: #619DF0;
   --color-primary: #7AB5F8;
   --color-primary-30: #a2cbfa;
@@ -19,12 +28,13 @@ html {
 }
 
 body {
-  /* font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, */
-  /* Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
-  font-family: 'Inter', sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  /* font-family: 'Inter', sans-serif; */
   font-weight: 400;
   line-height: 1.75;
-  background-color: #f5f5f5;
+  transition: background-color 0.3s linear, color 0.3s linear;
+  background-color: var(--color-background);
 }
 
 .ql-container {
@@ -33,26 +43,42 @@ body {
 
 /* Scroll bar */
 /* Set the width and color of the scrollbar */
-.ql-editor::-webkit-scrollbar {
-  width: 10px;
-  background-color: #f0f0f080;
+*::-webkit-scrollbar {
+  background-color: #F8F8F8;
+  width: 1.8rem;
+  border-radius: 10px;
 }
 
 /* Set the color and style of the scrollbar thumb */
-.ql-editor::-webkit-scrollbar-thumb {
+*::-webkit-scrollbar-thumb {
   cursor: pointer;
   background-color: #D9D0D0;
   border: 2px solid #D9D0D0;
-  border-radius: 5px;
-  width: 10px;
+  border-radius: 25px;
+  border: 5px solid #F8F8F8;
   pointer-events: auto;
 }
 
 /* Set the color and style of the scrollbar thumb when hovered */
-.ql-editor::-webkit-scrollbar-thumb:hover {
+*::-webkit-scrollbar-thumb:hover {
   background-color: #ccc;
   border-color: #ccc;
   cursor: pointer;
+  border: 5px solid #F8F8F8;
+}
+
+.dark-theme *::-webkit-scrollbar {
+  background-color: transparent;
+}
+
+.dark-theme *::-webkit-scrollbar-thumb,
+.dark-theme *::-webkit-scrollbar-thumb:hover {
+  border: 5px solid var(--color-background);
+}
+
+.dark-theme .card::-webkit-scrollbar-thumb,
+.dark-theme .card::-webkit-scrollbar-thumb:hover {
+  border: 5px solid #FBFBFC;
 }
 
 
@@ -77,7 +103,7 @@ main {
   z-index: 1;
   border: none;
   transform: rotate(0deg);
-  background-color: #7AB5F8;
+  background-color: var(--color-primary);
   width: 13rem;
   height: 100vh;
   min-height: 100%;
@@ -98,6 +124,10 @@ main {
   margin: 0 auto;
 }
 
+.ql-editor.ql-blank::before {
+  color: var(--main-text);
+}
+
 .ql-toolbar.ql-snow .ql-formats .ql-picker {
   margin-top: 1rem;
 }
@@ -107,12 +137,12 @@ main {
 }
 
 .ql-snow .ql-picker.ql-expanded .ql-picker-label {
-  color: var(--color-text);
+  color: #FBFBFC;
 }
 
 .ql-toolbar.ql-snow .ql-picker-label {
   border: none;
-  color: var(--color-text);
+  color: #FBFBFC;
 }
 
 .ql-formats button {
@@ -123,16 +153,21 @@ main {
 .ql-snow .ql-toolbar button {
   height: 33px;
   width: 33px;
-  stroke: var(--color-text);
+  stroke: #FBFBFC;
+}
+
+.ql-toolbar.ql-snow .ql-picker-label {
+  /* height: 36px; */
+  /* width: 36px; */
 }
 
 .ql-snow .ql-stroke {
-  stroke: var(--color-text);
+  stroke: #FBFBFC;
 }
 
 .ql-container {
   width: 62vw;
-  height: 90vh;
+  height: 91vh;
   margin: 4% auto 0 auto;
 }
 
@@ -142,7 +177,7 @@ main {
 
 .ql-editor {
   border-radius: 10px;
-
+  color: var(--main-text);
 }
 
 .ql-editor {
@@ -180,9 +215,9 @@ main {
 }
 
 .card {
-  background: var(--color-text);
+  background: #FBFBFC;
   box-shadow: -5px 5px 16px rgba(0, 0, 0, 0.1);
-  border-radius: 15px;
+  border-radius: 10px;
   overflow: auto;
 }
 
@@ -190,7 +225,7 @@ main {
   border: none;
   background: transparent;
   background-color: var(--color-primary);
-  color: var(--color-text);
+  color: #FBFBFC;
   padding: 1rem 1.8rem;
   border-radius: 25px;
   font-size: 1.6rem;
@@ -216,6 +251,10 @@ main {
 .todo-list {
   display: inline-block;
   width: 100%;
+}
+
+.todo-card::-webkit-scrollbar {
+  background-color: transparent;
 }
 
 .todo-card {
@@ -295,6 +334,7 @@ main {
   border: none;
   color: #000000e7;
   border-bottom: 2px solid rgba(204, 204, 204, 0.87);
+  background-color: transparent;
 }
 
 .input.error {
@@ -354,7 +394,7 @@ main {
   position: absolute;
   height: 87%;
   width: 87%;
-  background-color: var(--color-text);
+  background-color: #FBFBFC;
   border-radius: 50%;
 }
 
@@ -389,7 +429,6 @@ main {
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
-  width: 28rem;
   margin: 1rem auto 0 auto;
 }
 
@@ -405,7 +444,7 @@ main {
 
 .btn-start {
   background-color: var(--color-primary);
-  color: var(--color-text);
+  color: #FBFBFC;
 }
 
 .clock-icon {
@@ -446,21 +485,21 @@ main {
 }
 
 .clock-item {
-  background-color: var(--color-text);
+  background-color: #fff;
   padding: 0.2rem;
 }
 
 .clock-item.active {
   background-color: var(--color-primary);
-  color: var(--color-text);
+  color: #FBFBFC;
 }
 
-.clock-item.active:first-child {
+.clock-item:first-child {
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
 }
 
-.clock-item.active:last-child {
+.clock-item:last-child {
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
 }
@@ -498,7 +537,7 @@ main {
   text-align: center;
   cursor: pointer;
   border: 0;
-  color: var(--color-text);
+  color: #FBFBFC;
   font-size: 1.4rem;
   font-weight: 500;
   text-transform: uppercase;
