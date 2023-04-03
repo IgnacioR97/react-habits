@@ -169,7 +169,7 @@ main {
 .ql-container {
   width: 62vw;
   height: 91vh;
-  margin: 4% auto 0 auto;
+  margin: 6% auto 0 auto;
 }
 
 .ql-container.ql-snow {
@@ -190,17 +190,29 @@ main {
 }
 
 .logo {
-  position: absolute;
+
   z-index: 2;
   width: 13rem;
   height: 4rem;
   top: 5.5rem;
-  left: 0%;
 }
 
 .main {
   overflow: hidden;
 }
+
+/* Title */
+.title-container {
+  position: absolute;
+  top: 2%;
+  left: 10%;
+  transform: translate(8%, 60%);
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.title {}
 
 /* //////////////////// CARDS //////////////////// */
 .side-cards {
