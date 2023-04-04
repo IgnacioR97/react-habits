@@ -103,8 +103,8 @@ const Timer = () => {
   };
 
   const handleAddTime = () => {
-    setExtraTime((prevExtraTime) => prevExtraTime + 5 * 60);
-    setTotalTime((prevTotalTime) => prevTotalTime + 5 * 60);
+    setExtraTime((prevExtraTime) => prevExtraTime + 5);
+    setTotalTime((prevTotalTime) => prevTotalTime + 5);
   };
 
   const handleStopTime = () => {

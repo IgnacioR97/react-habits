@@ -55,7 +55,7 @@ const CustomToolbar = () => (
         <BiHighlight />
       </button>
       <button className="ql-align ql-picker ql-icon-picker">
-        {/* <RxTextAlignCenter /> */}
+        <RxTextAlignCenter />
       </button>
       <button className="ql-link">
         <BiLink />
@@ -85,8 +85,3 @@ icons.image = <MdImage />;
 Quill.register(icons);
 
 export default CustomToolbar;
-
-{
-  /*
-   */
-}
