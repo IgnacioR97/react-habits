@@ -60,6 +60,10 @@ export default TextEditor;
 
 import React, { useState } from "react";
 import ReactQuill, { Quill } from "react-quill";
+import "react-quill/dist/quill.snow.css";
+
+import logo from "../../src/logo-removebg-preview.png";
+
 import {
   RxFontBold,
   RxFontItalic,
@@ -67,9 +71,7 @@ import {
   RxUnderline,
 } from "react-icons/rx";
 import { RiFontColor } from "react-icons/ri";
-import "react-quill/dist/quill.snow.css";
-
-import logo from "../../src/logo-removebg-preview.png";
+import { BiHighlight } from "react-icons/bi";
 import { VscListOrdered } from "react-icons/vsc";
 
 //Custom toolbar module
@@ -102,21 +104,13 @@ const CustomToolbar = () => (
       </button>
     </span>
     <span className="ql-formats">
-      <button className="ql-color">
-        <span className="ql-formats">
-          <RiFontColor />
-          <select className="ql-color" value="">
-            <option value="red"></option>
-            <option value="orange"></option>
-            <option value="yellow"></option>
-            <option value="green"></option>
-            <option value="blue"></option>
-            <option value="purple"></option>
-          </select>
-        </span>
+      <button className="ql-color ql-picker ql-color-picker ql-expanded">
+        <RiFontColor />
       </button>
 
-      <select className="ql-background" />
+      <select className="ql-background ql-picker ql-color-picker">
+        <BiHighlight />
+      </select>
       <select className="ql-align" />
       <button className="ql-link" />
       <button className="ql-image" />
@@ -136,6 +130,7 @@ icons["underline"] = <RxUnderline />;
 icons["list"]["bullet"] = <RxListBullet />;
 icons["list"]["ordered"] = <VscListOrdered />;
 icons["color"] = <RiFontColor />;
+icons["background"] = <BiHighlight />;
 
 const App = () => {
   const [value, setValue] = useState("");
