@@ -61,76 +61,7 @@ export default TextEditor;
 import React, { useState } from "react";
 import ReactQuill, { Quill } from "react-quill";
 import "react-quill/dist/quill.snow.css";
-
-import logo from "../../src/logo-removebg-preview.png";
-
-import {
-  RxFontBold,
-  RxFontItalic,
-  RxListBullet,
-  RxUnderline,
-} from "react-icons/rx";
-import { RiFontColor } from "react-icons/ri";
-import { BiHighlight } from "react-icons/bi";
-import { VscListOrdered } from "react-icons/vsc";
-
-//Custom toolbar module
-const CustomToolbar = () => (
-  <div id="toolbar" className="toolbar">
-    <img src={logo} alt="logo" className="logo" />
-    <select className="ql-header" defaultValue="">
-      <option value="1">Heading 1</option>
-      <option value="2">Heading 2</option>
-      <option value="3">Heading 3</option>
-      <option value="">Normal</option>
-    </select>
-    <span className="ql-formats">
-      <button className="ql-bold">
-        <RxFontBold />
-      </button>
-      <button className="ql-italic">
-        <RxFontItalic />
-      </button>
-      <button className="ql-underline">
-        <RxUnderline />
-      </button>
-    </span>
-    <span className="ql-formats">
-      <button className="ql-list">
-        <RxListBullet />
-      </button>
-      <button className="ql-list">
-        <VscListOrdered />
-      </button>
-    </span>
-    <span className="ql-formats">
-      <button className="ql-color ql-picker ql-color-picker ql-expanded">
-        <RiFontColor />
-      </button>
-
-      <select className="ql-background ql-picker ql-color-picker">
-        <BiHighlight />
-      </select>
-      <select className="ql-align" />
-      <button className="ql-link" />
-      <button className="ql-image" />
-    </span>
-  </div>
-);
-
-// Register the color attribute with Quill
-const colorStyle = Quill.import("attributors/style/color");
-Quill.register(colorStyle, true);
-
-//Register the custom icons
-const icons = Quill.import("ui/icons");
-icons["bold"] = <RxFontBold />;
-icons["italic"] = <RxFontItalic />;
-icons["underline"] = <RxUnderline />;
-icons["list"]["bullet"] = <RxListBullet />;
-icons["list"]["ordered"] = <VscListOrdered />;
-icons["color"] = <RiFontColor />;
-icons["background"] = <BiHighlight />;
+import CustomToolbar from "./CustomToolbar";
 
 const App = () => {
   const [value, setValue] = useState("");

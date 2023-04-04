@@ -156,10 +156,8 @@ main {
   stroke: #FBFBFC;
 }
 
-.ql-toolbar.ql-snow .ql-picker-label {
-  /* height: 36px; */
-  /* width: 36px; */
-  /*  */
+.ql-snow .ql-tooltip {
+  z-index: 100;
 }
 
 .ql-snow .ql-stroke {
@@ -168,7 +166,7 @@ main {
 
 .ql-container {
   width: 62vw;
-  height: 91vh;
+  height: 89vh;
   margin: 6% auto 0 auto;
 }
 
@@ -189,8 +187,8 @@ main {
   font-style: normal;
 }
 
-.logo {
 
+.logo {
   z-index: 2;
   width: 13rem;
   height: 4rem;
