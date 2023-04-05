@@ -43,18 +43,20 @@ const CustomToolbar = () => (
       <button className="ql-list">
         <VscListUnordered />
       </button>
-      <button className="ql-list" value="ordered">
+      <button className="ql-list">
         <VscListOrdered />
       </button>
     </span>
     <span className="ql-formats">
-      <button className="ql-color" />
-      <button className="ql-background">
+      <select className="ql-color ql-picker ql-color-picker">
+        <RiFontColor />
+      </select>
+      <select className="ql-background">
         <BiHighlight />
-      </button>
-      <button className="ql-align ql-picker ql-icon-picker">
+      </select>
+      <select className="ql-align ql-picker ql-icon-picker">
         <RxTextAlignCenter />
-      </button>
+      </select>
       <button className="ql-link">
         <BiLink />
       </button>
@@ -72,9 +74,10 @@ icons.italic = <BsTypeItalic />;
 icons.underline = <AiOutlineUnderline />;
 icons["list"]["ordered"] = <VscListOrdered />;
 icons["list"]["bullet"] = <VscListUnordered />;
-// icons.color = <RiFontColor />;
+icons.color = <RiFontColor />;
 icons.background = <BiHighlight />;
 icons.link = <BiLink />;
+icons.center = <RxTextAlignCenter />;
 icons.image = <MdImage />;
 Quill.register(icons);
 
