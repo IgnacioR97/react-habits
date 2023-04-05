@@ -40,7 +40,7 @@ const CustomToolbar = () => (
       </button>
     </span>
     <span className="ql-formats">
-      <button className="ql-list" value="bullet">
+      <button className="ql-list">
         <VscListUnordered />
       </button>
       <button className="ql-list" value="ordered">
@@ -48,9 +48,7 @@ const CustomToolbar = () => (
       </button>
     </span>
     <span className="ql-formats">
-      <button className="ql-color">
-        <RiFontColor />
-      </button>
+      <button className="ql-color" />
       <button className="ql-background">
         <BiHighlight />
       </button>
@@ -67,10 +65,6 @@ const CustomToolbar = () => (
   </div>
 );
 
-// Register the color attribute with Quill
-const colorStyle = Quill.import("attributors/style/color");
-Quill.register(colorStyle, true);
-
 //Register the custom icons
 const icons = Quill.import("ui/icons");
 icons.bold = <BsTypeBold />;
@@ -78,7 +72,7 @@ icons.italic = <BsTypeItalic />;
 icons.underline = <AiOutlineUnderline />;
 icons["list"]["ordered"] = <VscListOrdered />;
 icons["list"]["bullet"] = <VscListUnordered />;
-icons.color = <RiFontColor />;
+// icons.color = <RiFontColor />;
 icons.background = <BiHighlight />;
 icons.link = <BiLink />;
 icons.image = <MdImage />;
