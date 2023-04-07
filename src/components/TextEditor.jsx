@@ -22,12 +22,21 @@ const App = () => {
   return (
     <div className="container">
       <CustomToolbar />
-      <ReactQuill
-        value={value}
-        onChange={handleChange}
-        modules={{ toolbar: "#toolbar" }}
-        placeholder="Enter text here..."
-      />
+      <div className="text-editor">
+        <input
+          type="text"
+          className="title"
+          placeholder="Title:"
+          data-form-type="other"
+        />
+        {/* <p className="word-count">{value.length - 7}</p> */}
+        <ReactQuill
+          value={value}
+          onChange={handleChange}
+          modules={{ toolbar: "#toolbar" }}
+          placeholder="Enter text here..."
+        />
+      </div>
     </div>
   );
 };
