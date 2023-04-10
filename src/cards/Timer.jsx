@@ -14,7 +14,6 @@ const Timer = () => {
     { id: 3, time: 25 },
     { id: 4, time: 30 },
     { id: 5, time: 45 },
-    { id: 6, time: 0.1 },
   ];
 
   const [elapsedTime, setElapsedTime] = useState(0);
@@ -72,6 +71,7 @@ const Timer = () => {
             setTotalTime((defaultTime + extraTime) * 60);
             setDisplayTime(`${defaultTime}:00`);
             setMode("light-theme");
+            setCompletedToday(completedToday + 1);
           }
           return updatedElapsedTime;
         });

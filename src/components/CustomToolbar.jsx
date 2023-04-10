@@ -57,7 +57,6 @@ const CustomToolbar = () => (
 
 //Register the custom icons
 const icons = Quill.import("ui/icons");
-console.log(icons);
 icons.bold = <BsTypeBold className="toolbar-icon" />;
 icons.italic = <BsTypeItalic className="toolbar-icon" />;
 icons.underline = <AiOutlineUnderline className="toolbar-icon" />;
