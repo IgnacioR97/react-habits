@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { BsCircle } from "react-icons/bs";
-import { AiOutlinePlus } from "react-icons/ai";
-import { HiOutlinePencilAlt } from "react-icons/hi";
+import { HiOutlinePencilAlt, HiPlus } from "react-icons/hi";
 
 const getLocalStorage = () => {
   let list = localStorage.getItem("todo");
@@ -83,7 +82,7 @@ function TodoList() {
       </ul>
       <form className="add-task" onSubmit={handleSubmit}>
         <button className="btn-add">
-          <AiOutlinePlus className="icon-add" />
+          <HiPlus className="icon-add" />
         </button>
         <input
           type="text"
