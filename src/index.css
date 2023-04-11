@@ -1,6 +1,6 @@
 .dark-theme {
   --color-background: #1E1E1E;
-  --main-text: #fbfbfcba;
+  --main-text: #ffffffe7;
   --color-secondary: #5370e1;
   --color-primary: #3D5AF2;
   --color-primary-30: #8da3fc;
@@ -9,7 +9,7 @@
 
 .light-theme {
   --color-background: #F8F8F8;
-  --main-text: rgba(0, 0, 0, 0.6);
+  --main-text: #000000a7;
   --color-secondary: #3148c2;
   --color-primary: #3D5AF2;
   --color-primary-30: #647bf5;
@@ -287,10 +287,10 @@ main {
 .ql-snow .ql-toolbar .ql-picker-item:hover,
 .ql-snow.ql-toolbar .ql-picker-item.ql-selected,
 .ql-snow .ql-toolbar .ql-picker-item.ql-selected {
-  /* border-radius: 10px;
-  width: 5rem;
-  color: #fff; */
-  color: var(--color-secondary);
+  /* border-radius: 10px; */
+  /* width: 3rem; */
+  /* color: #fff; */
+  color: var(--color-primary);
 }
 
 .ql-snow .ql-picker.ql-header .ql-picker-label::before,
@@ -321,6 +321,7 @@ main {
 
 .container .toolbar .ql-active svg {
   color: var(--color-secondary);
+  /* color: #fff; */
 }
 
 .main {
@@ -372,6 +373,7 @@ main {
 .header {
   margin-bottom: 1rem;
   font-size: 2rem;
+  color: var(--main-text);
 }
 
 .todo-list {
@@ -393,7 +395,7 @@ main {
   display: flex;
   padding-bottom: 0.5rem;
   margin-bottom: 1rem;
-  border-bottom: 2px solid rgba(204, 204, 204, 0.87);
+  border-bottom: 2px solid transparent;
 }
 
 .flex {
@@ -410,8 +412,8 @@ main {
 }
 
 .icon-circle {
-  font-size: 1.3rem;
-  color: #000000af;
+  font-size: 2.5rem;
+  color: var(--color-primary)
 }
 
 .icon-circle:hover {
@@ -426,6 +428,7 @@ main {
 
 .icon-pencil {
   font-size: 1.5rem;
+  color: var(--main-text);
 }
 
 .todo-card .item {
@@ -434,7 +437,7 @@ main {
 
 .todo-card p {
   font-size: 1.5rem;
-  color: #000000af;
+  color: var(--main-text);
 }
 
 .add-task {
@@ -463,7 +466,7 @@ main {
 .input {
   font-size: 1.6rem;
   border: none;
-  color: #000000e7;
+  color: var(--main-text);
   background-color: transparent;
   margin-left: 0.2rem;
 }

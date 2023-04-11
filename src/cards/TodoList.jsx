@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { BsCircle } from "react-icons/bs";
+import { FiSquare } from "react-icons/fi";
 import { HiOutlinePencilAlt, HiPlus } from "react-icons/hi";
 
 const getLocalStorage = () => {
@@ -67,7 +67,7 @@ function TodoList() {
             <li className="item" key={id}>
               <div className="flex">
                 <button className="btn-complete" onClick={() => removeItem(id)}>
-                  <BsCircle className="icon-circle" />
+                  <FiSquare className="icon-circle" />
                 </button>
                 <p>{item}</p>
               </div>
