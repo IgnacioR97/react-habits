@@ -364,7 +364,7 @@ main {
 
 .card {
   background: var(--color-toolbar);
-  box-shadow: -5px 5px 16px rgba(0, 0, 0, 0.1);
+  box-shadow: -5px 5px 16px rgba(0, 0, 0, 0.06);
   border-radius: 10px;
   overflow: auto;
 }
@@ -407,7 +407,7 @@ main {
 }
 
 .todo-card {
-  padding: 2rem;
+  padding: 1.2rem 2rem 2rem 2rem;
   width: 100%;
   height: 17rem;
 }

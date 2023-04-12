@@ -1,4 +1,5 @@
 import logo from "../../src/logo-removebg-preview.png";
+// import logoLight from "../../src/logo-light.png";
 import { Quill } from "react-quill";
 
 import { VscListOrdered, VscListUnordered } from "react-icons/vsc";
@@ -8,52 +9,54 @@ import { BiLink, BiHighlight } from "react-icons/bi";
 import { MdImage } from "react-icons/md";
 import { RxTextAlignCenter } from "react-icons/rx";
 
-const CustomToolbar = () => (
-  <div id="toolbar" className="toolbar">
-    <img src={logo} alt="logo" className="logo" />
-    <select className="ql-header" defaultValue="">
-      <option value="1">Heading 1</option>
-      <option value="2">Heading 2</option>
-      <option value="3">Heading 3</option>
-      <option value="" className="toolbar-icon toolbar-normal">
-        Normal
-      </option>
-    </select>
+const CustomToolbar = () => {
+  console.log(document.documentElement.classList.value);
+  console.log("hello");
 
-    <button className="ql-bold">
-      <BsTypeBold className="toolbar-icon" />
-    </button>
-    <button className="ql-italic">
-      <BsTypeItalic className="toolbar-icon" />
-    </button>
-    <button className="ql-underline">
-      <AiOutlineUnderline className="toolbar-icon" />
-    </button>
-
-    <button className="ql-list" value="bullet">
-      <VscListUnordered className="toolbar-icon" />
-    </button>
-    <button className="ql-list" value="ordered">
-      <VscListOrdered className="toolbar-icon" />
-    </button>
-
-    <select className="ql-color ql-picker ql-color-picker">
-      <BiLink className="toolbar-icon" />
-    </select>
-    <select className="ql-background">
-      <BiHighlight className="toolbar-icon" />
-    </select>
-    <select className="ql-align ql-picker ql-icon-picker">
-      <RxTextAlignCenter className="toolbar-icon" />
-    </select>
-    <button className="ql-link">
-      <BiLink className="toolbar-icon" />
-    </button>
-    <button className="ql-image">
-      <MdImage className="toolbar-icon" />
-    </button>
-  </div>
-);
+  return (
+    <div id="toolbar" className="toolbar">
+      <img src={logo} alt="logo" className="logo" />
+      <select className="ql-header" defaultValue="">
+        <option value="1">Heading 1</option>
+        <option value="2">Heading 2</option>
+        <option value="3">Heading 3</option>
+        <option value="" className="toolbar-icon toolbar-normal">
+          Normal
+        </option>
+      </select>
+      <button className="ql-bold">
+        <BsTypeBold className="toolbar-icon" />
+      </button>
+      <button className="ql-italic">
+        <BsTypeItalic className="toolbar-icon" />
+      </button>
+      <button className="ql-underline">
+        <AiOutlineUnderline className="toolbar-icon" />
+      </button>
+      <button className="ql-list" value="bullet">
+        <VscListUnordered className="toolbar-icon" />
+      </button>
+      <button className="ql-list" value="ordered">
+        <VscListOrdered className="toolbar-icon" />
+      </button>
+      <select className="ql-color ql-picker ql-color-picker">
+        <BiLink className="toolbar-icon" />
+      </select>
+      <select className="ql-background">
+        <BiHighlight className="toolbar-icon" />
+      </select>
+      <select className="ql-align ql-picker ql-icon-picker">
+        <RxTextAlignCenter className="toolbar-icon" />
+      </select>
+      <button className="ql-link">
+        <BiLink className="toolbar-icon" />
+      </button>
+      <button className="ql-image">
+        <MdImage className="toolbar-icon" />
+      </button>
+    </div>
+  );
+};
 
 //Register the custom icons
 const icons = Quill.import("ui/icons");
