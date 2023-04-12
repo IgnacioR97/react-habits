@@ -1,5 +1,5 @@
 import logo from "../../src/logo-removebg-preview.png";
-// import logoLight from "../../src/logo-light.png";
+import logoLight from "../../src/logo-light.png";
 import { Quill } from "react-quill";
 
 import { VscListOrdered, VscListUnordered } from "react-icons/vsc";
@@ -10,12 +10,19 @@ import { MdImage } from "react-icons/md";
 import { RxTextAlignCenter } from "react-icons/rx";
 
 const CustomToolbar = () => {
-  console.log(document.documentElement.classList.value);
-  console.log("hello");
+  console.log(document.documentElement.classList.item(0));
+  let theme = "light-theme";
+  if (document.documentElement.getAttribute("class") === "dark-theme") {
+    theme = "dark-theme";
+  }
 
   return (
     <div id="toolbar" className="toolbar">
-      <img src={logo} alt="logo" className="logo" />
+      <img
+        src={theme === "dark" ? logo : logoLight}
+        alt="logo"
+        className="logo"
+      />
       <select className="ql-header" defaultValue="">
         <option value="1">Heading 1</option>
         <option value="2">Heading 2</option>
