@@ -13,7 +13,6 @@ const TipsModal = ({ setOpenModal }) => {
 
   const increaseNum = () => {
     let newNum = currentNum + 1;
-    console.log(newNum);
     if (newNum > tips.length - 1) {
       setCurrentNum(0);
     } else {
@@ -23,7 +22,6 @@ const TipsModal = ({ setOpenModal }) => {
 
   const decreaseNum = () => {
     let newNum = currentNum - 1;
-    console.log(newNum);
     if (newNum === -1) {
       setCurrentNum(tips.length - 1);
     } else {

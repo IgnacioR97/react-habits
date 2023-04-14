@@ -313,6 +313,29 @@ main {
   color: var(--color-primary);
 }
 
+.toolbar-hover {
+  position: relative;
+}
+
+.toolbar-hover:hover .toolbar-text {
+  display: block;
+}
+
+.toolbar-hover .toolbar-text {
+  color: #FFF;
+  padding: 0.8rem;
+  border-radius: 10px;
+  width: 100%;
+  background-color: #000;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+  display: none;
+  pointer-events: none;
+  position: absolute;
+  font-size: 1.5rem;
+  top: 0%;
+  left: 80%;
+}
+
 .ql-snow .ql-picker.ql-header .ql-picker-label::before,
 .ql-snow .ql-picker.ql-header .ql-picker-item::before {
   content: 'Text';
@@ -453,6 +476,11 @@ main {
 
 .todo-card .item {
   width: 100%;
+}
+
+.flex:hover {
+  text-decoration: line-through;
+  color: #fff;
 }
 
 .todo-card p {
