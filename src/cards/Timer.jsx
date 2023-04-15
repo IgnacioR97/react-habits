@@ -129,10 +129,7 @@ const Timer = () => {
       <div className="timer-buttons">
         {isActive || (
           <>
-            <button
-              onClick={handleStartClick}
-              className="btn btn-start btn-hover"
-            >
+            <button onClick={handleStartClick} className="btn btn-start">
               {isBreakTime ? "Skip Break" : "Start"}
             </button>
             {isBreakTime || (

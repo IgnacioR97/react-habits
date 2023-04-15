@@ -46,16 +46,10 @@ const CustomToolbar = () => {
       <button className="ql-list toolbar-hover" value="ordered">
         <VscListOrdered className="toolbar-icon" />
       </button>
-      <select className="ql-color ql-picker ql-color-picker toolbar-hover">
-        <BiLink className="toolbar-icon" />
-      </select>
-      <select className="ql-background toolbar-hover">
-        <BiHighlight className="toolbar-icon" />
-      </select>
+      <select className="ql-color ql-picker ql-color-picker toolbar-hover"></select>
+      <select className="ql-background toolbar-hover"></select>
       <div className="toolbar-hover">
-        <select className="ql-align ql-picker ql-icon-picker toolbar-hover">
-          <RxTextAlignCenter className="toolbar-icon" />
-        </select>
+        <select className="ql-align ql-picker ql-icon-picker toolbar-hover"></select>
         <p className="toolbar-text toolbar-text--align">Align Text</p>
       </div>
       <button className="ql-link toolbar-hover">

@@ -165,7 +165,7 @@ main {
 
   display: flex;
   flex-direction: column;
-  padding-top: 5rem;
+  padding-top: 6.2rem;
   align-items: center;
   gap: 1rem;
   border-top-right-radius: 20px;
@@ -335,7 +335,6 @@ select .toolbar-hover .toolbar-text,
   left: 80%;
   font-weight: 400;
   transition: opacity 0.1s linear;
-  transition-delay: .8s;
   opacity: 0;
 }
 
@@ -351,6 +350,15 @@ select .toolbar-hover .toolbar-text,
   width: 9rem;
   height: 3.2rem;
   transform: translate(32%, -10%);
+}
+
+.toolbar-hover:hover .toolbar-text {
+  transition-delay: 1.2s;
+  opacity: 1;
+}
+
+.toolbar-text {
+  transition-delay: 0s;
 }
 
 .ql-snow .ql-picker.ql-header .ql-picker-label::before,
@@ -396,7 +404,7 @@ select .toolbar-hover .toolbar-text,
 /* //////////////////// CARDS //////////////////// */
 @keyframes startup {
   0% {
-    filter: blur(5px);
+    filter: blur(4px);
     opacity: 0;
     transform: translateY(-20%);
   }
@@ -423,7 +431,7 @@ select .toolbar-hover .toolbar-text,
 
 .card {
   background: var(--color-toolbar);
-  box-shadow: -5px 5px 16px rgba(0, 0, 0, 0.07);
+  box-shadow: -5px 5px 16px rgba(0, 0, 0, 0.06);
   border-radius: 10px;
   overflow: auto;
 }
@@ -438,7 +446,7 @@ select .toolbar-hover .toolbar-text,
   font-size: 1.6rem;
   display: flex;
   align-items: center;
-  letter-spacing: 1.1px;
+  letter-spacing: 0.7px;
   gap: 0.4rem;
   cursor: pointer;
 }
@@ -471,6 +479,7 @@ select .toolbar-hover .toolbar-text,
   width: 100%;
   height: 17rem;
   overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 .item {
@@ -480,6 +489,12 @@ select .toolbar-hover .toolbar-text,
   border-bottom: 2px solid transparent;
   position: relative;
   transition: transform 0.4s ease-out;
+}
+
+.item.priority {
+  border-bottom: 2px solid var(--color-primary);
+  padding-bottom: 0.8rem;
+  margin-bottom: 2rem;
 }
 
 .flex {
@@ -513,6 +528,21 @@ select .toolbar-hover .toolbar-text,
 .icon-pencil {
   font-size: 1.5rem;
   color: var(--main-text);
+}
+
+.icon-flag {
+  color: var(--main-text);
+  font-size: 1.5rem;
+  margin-left: 0.2rem;
+  transition: color 0.2s ease-in-out;
+}
+
+.icon-flag:hover {
+  color: var(--color-primary);
+}
+
+.btn-flag--active .icon-flag {
+  color: var(--color-primary);
 }
 
 .todo-card .item {
@@ -669,6 +699,11 @@ select .toolbar-hover .toolbar-text,
 .btn-start {
   background-color: var(--color-primary);
   color: #FBFBFC;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.btn-start:hover {
+  background-color: var(--color-secondary);
 }
 
 .clock-icon {
@@ -711,6 +746,11 @@ select .toolbar-hover .toolbar-text,
 .clock-item {
   background-color: #fff;
   padding: 0.2rem;
+  transition: all 0.3s linear;
+}
+
+.clock-item:hover {
+  background-color: var(--color-primary-30);
 }
 
 .clock-item.active {
