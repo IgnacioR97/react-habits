@@ -7,30 +7,27 @@ import { AiOutlineUnderline } from "react-icons/ai";
 import { BiLink, BiHighlight } from "react-icons/bi";
 import { MdImage } from "react-icons/md";
 import { RxTextAlignCenter } from "react-icons/rx";
-import { useEffect, useRef } from "react";
 
 const CustomToolbar = () => {
-  const refWidth = useRef(null);
-
-  // useEffect(() => {
-  //   let selectElement = refWidth.current.parentElement;
-  //   selectElement.style.width = `${refWidth.current.offsetWidth}px`;
-  // }, []);
-
   return (
     <div id="toolbar" className="toolbar">
       <img src={logoLight} alt="logo" className="logo" />
-      <select className="ql-header" defaultValue="">
-        <option value="1">Heading 1</option>
-        <option value="2">Heading 2</option>
-        <option value="3">Heading 3</option>
-        <option value="" className="toolbar-icon toolbar-normal toolbar-hover">
-          Normal
-        </option>
-        <p className="toolbar-text" rel={refWidth}>
+      <div className="toolbar-hover">
+        <select className="ql-header" defaultValue="">
+          <option value="1">Heading 1</option>
+          <option value="2">Heading 2</option>
+          <option value="3">Heading 3</option>
+          <option
+            value=""
+            className="toolbar-icon toolbar-normal toolbar-hover"
+          >
+            Normal
+          </option>
+        </select>
+        <p className="toolbar-text toolbar-text--align toolbar-text--styles">
           Styles
         </p>
-      </select>
+      </div>
       <button className="ql-bold toolbar-hover">
         <BsTypeBold className="toolbar-icon" />
         <p className="toolbar-text">Bold (⌘ B)</p>
@@ -55,20 +52,19 @@ const CustomToolbar = () => {
       <select className="ql-background toolbar-hover">
         <BiHighlight className="toolbar-icon" />
       </select>
-      <select className="ql-align ql-picker ql-icon-picker toolbar-hover">
-        <RxTextAlignCenter className="toolbar-icon" />
-      </select>
+      <div className="toolbar-hover">
+        <select className="ql-align ql-picker ql-icon-picker toolbar-hover">
+          <RxTextAlignCenter className="toolbar-icon" />
+        </select>
+        <p className="toolbar-text toolbar-text--align">Align Text</p>
+      </div>
       <button className="ql-link toolbar-hover">
         <BiLink className="toolbar-icon" />
-        <p className="toolbar-text" rel={refWidth}>
-          Add Link
-        </p>
+        <p className="toolbar-text">Activate Link</p>
       </button>
       <button className="ql-image toolbar-hover">
         <MdImage className="toolbar-icon" />
-        <p className="toolbar-text" rel={refWidth}>
-          Add Image
-        </p>
+        <p className="toolbar-text">Add Image</p>
       </button>
     </div>
   );
@@ -87,7 +83,7 @@ icons["list"][
 icons["list"][
   "bullet"
 ] = `<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg" class="toolbar-icon"><path d="M912 192H328c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h584c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 284H328c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h584c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 284H328c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h584c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM104 228a56 56 0 1 0 112 0 56 56 0 1 0-112 0zm0 284a56 56 0 1 0 112 0 56 56 0 1 0-112 0zm0 284a56 56 0 1 0 112 0 56 56 0 1 0-112 0z"></path></svg>
-<p class="toolbar-text">Bullet List</p>
+<p class="toolbar-text">Bullet List (-)</p>
 `;
 icons.color = `<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg" className='toolbar-icon'><g><path fill="none" d="M0 0h24v24H0z"></path><path d="M15.246 14H8.754l-1.6 4H5l6-15h2l6 15h-2.154l-1.6-4zm-.8-2L12 5.885 9.554 12h4.892zM3 20h18v2H3v-2z"></path></g></svg>
 <p class="toolbar-text">Text Color</p>
@@ -97,7 +93,8 @@ icons.background = `<svg stroke="currentColor" fill="currentColor" stroke-width=
 <p class="toolbar-text">Highlight Text</p>
 `;
 icons.align[""] = `
-<svg stroke="currentColor" fill="none" stroke-width="0" viewBox="0 0 15 15" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg" className='toolbar-icon'><path fill-rule="evenodd" clip-rule="evenodd" d="M2 4.5C2 4.22386 2.22386 4 2.5 4H12.5C12.7761 4 13 4.22386 13 4.5C13 4.77614 12.7761 5 12.5 5H2.5C2.22386 5 2 4.77614 2 4.5ZM2 7.5C2 7.22386 2.22386 7 2.5 7H7.5C7.77614 7 8 7.22386 8 7.5C8 7.77614 7.77614 8 7.5 8H2.5C2.22386 8 2 7.77614 2 7.5ZM2 10.5C2 10.2239 2.22386 10 2.5 10H10.5C10.7761 10 11 10.2239 11 10.5C11 10.7761 10.7761 11 10.5 11H2.5C2.22386 11 2 10.7761 2 10.5Z" fill="currentColor"></path></svg>`;
+<svg stroke="currentColor" fill="none" stroke-width="0" viewBox="0 0 15 15" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg" className='toolbar-icon'><path fill-rule="evenodd" clip-rule="evenodd" d="M2 4.5C2 4.22386 2.22386 4 2.5 4H12.5C12.7761 4 13 4.22386 13 4.5C13 4.77614 12.7761 5 12.5 5H2.5C2.22386 5 2 4.77614 2 4.5ZM2 7.5C2 7.22386 2.22386 7 2.5 7H7.5C7.77614 7 8 7.22386 8 7.5C8 7.77614 7.77614 8 7.5 8H2.5C2.22386 8 2 7.77614 2 7.5ZM2 10.5C2 10.2239 2.22386 10 2.5 10H10.5C10.7761 10 11 10.2239 11 10.5C11 10.7761 10.7761 11 10.5 11H2.5C2.22386 11 2 10.7761 2 10.5Z" fill="currentColor"></path></svg>
+`;
 icons.align[
   "center"
 ] = `<svg stroke="currentColor" fill="none" stroke-width="0" viewBox="0 0 15 15" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg" className='toolbar-icon'><path fill-rule="evenodd" clip-rule="evenodd" d="M2 4.5C2 4.22386 2.22386 4 2.5 4H12.5C12.7761 4 13 4.22386 13 4.5C13 4.77614 12.7761 5 12.5 5H2.5C2.22386 5 2 4.77614 2 4.5ZM4 7.5C4 7.22386 4.22386 7 4.5 7H10.5C10.7761 7 11 7.22386 11 7.5C11 7.77614 10.7761 8 10.5 8H4.5C4.22386 8 4 7.77614 4 7.5ZM3 10.5C3 10.2239 3.22386 10 3.5 10H11.5C11.7761 10 12 10.2239 12 10.5C12 10.7761 11.7761 11 11.5 11H3.5C3.22386 11 3 10.7761 3 10.5Z" fill="currentColor"></path></svg>`;

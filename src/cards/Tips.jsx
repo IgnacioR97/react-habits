@@ -12,7 +12,10 @@ const Tips = () => {
         ease.
       </p>
       <div className="btn-container">
-        <button className="tips-btn" onClick={() => setOpenModal(true)}>
+        <button
+          className="tips-btn btn-hover"
+          onClick={() => setOpenModal(true)}
+        >
           view tips
         </button>
       </div>

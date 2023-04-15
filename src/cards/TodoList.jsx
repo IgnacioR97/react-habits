@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { FiSquare } from "react-icons/fi";
-import { HiOutlinePencilAlt, HiPlus } from "react-icons/hi";
+import { HiOutlinePencilAlt, HiPlus, HiCheck } from "react-icons/hi";
 
 const getLocalStorage = () => {
   let list = localStorage.getItem("todo");
@@ -45,8 +45,16 @@ function TodoList() {
   };
 
   const removeItem = (id) => {
-    const newArr = items.filter((item) => item.id !== id);
-    setItems(newArr);
+    const itemIndex = items.findIndex((item) => item.id === id);
+    const itemToRemove = document.getElementById(`item-${id}`);
+    if (itemToRemove) {
+      itemToRemove.style.transform = "translateX(110%)";
+      itemToRemove.addEventListener("transitionend", () => {
+        const newArr = [...items];
+        newArr.splice(itemIndex, 1);
+        setItems(newArr);
+      });
+    }
   };
 
   const editItem = (id) => {
@@ -64,7 +72,7 @@ function TodoList() {
         {items.map((todo) => {
           const { item, id } = todo;
           return (
-            <li className="item" key={id}>
+            <li className="item" key={id} id={`item-${id}`}>
               <div className="flex">
                 <button className="btn-complete" onClick={() => removeItem(id)}>
                   <FiSquare className="icon-circle" />
@@ -81,9 +89,15 @@ function TodoList() {
         })}
       </ul>
       <form className="add-task" onSubmit={handleSubmit}>
-        <button className="btn-add">
-          <HiPlus className="icon-add" />
-        </button>
+        {editItemIndex === -1 ? (
+          <button className="btn-add btn-hover" onClick={handleSubmit}>
+            <HiPlus className="icon-add" />
+          </button>
+        ) : (
+          <button className="btn-add btn-hover" onClick={() => editItem(id)}>
+            <HiCheck className="icon-add" />
+          </button>
+        )}
         <input
           type="text"
           placeholder="Add task"

@@ -30,7 +30,7 @@ const TipsModal = ({ setOpenModal }) => {
   };
 
   return (
-    <>
+    <div className="modal-transition">
       <div className="background" onClick={closeModal}></div>
       <div className="modal">
         <div>
@@ -56,12 +56,12 @@ const TipsModal = ({ setOpenModal }) => {
               <RxArrowRight className="modal-icon" />
             </button>
           </div>
-          <button className="close-btn" onClick={closeModal}>
+          <button className="close-btn btn-hover" onClick={closeModal}>
             <MdOutlineClose />
           </button>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 export default TipsModal;

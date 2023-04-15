@@ -26,6 +26,7 @@ const Timer = () => {
   const [displayTime, setDisplayTime] = useState(`${defaultTime}:00`);
   const progressBarRef = useRef(null);
   const [completedToday, setCompletedToday] = useState(0);
+  const [selectedTime, setSelectedTime] = useState(time[4]);
 
   useEffect(() => {
     setTotalTime((defaultTime + extraTime) * 60);
@@ -103,8 +104,10 @@ const Timer = () => {
   };
 
   const handleAddTime = () => {
-    setExtraTime((prevExtraTime) => prevExtraTime + 5);
-    setTotalTime((prevTotalTime) => prevTotalTime + 5);
+    if (defaultTime === selectedTime.time) {
+      setExtraTime((prevExtraTime) => prevExtraTime + 5);
+      setTotalTime((prevTotalTime) => prevTotalTime + 5);
+    }
   };
 
   const handleStopTime = () => {
@@ -112,12 +115,13 @@ const Timer = () => {
     setIsActive(false);
     setIsRunning(false);
   };
-
   const handleTimeItemClick = (item) => {
+    setSelectedTime(item);
     setDefaultTime(item.time);
     setTotalTime(item.time * 60);
     setElapsedTime(0);
     setDisplayTime(`${item.time}:00`);
+    setExtraTime(0);
   };
 
   return (
@@ -125,7 +129,10 @@ const Timer = () => {
       <div className="timer-buttons">
         {isActive || (
           <>
-            <button onClick={handleStartClick} className="btn btn-start">
+            <button
+              onClick={handleStartClick}
+              className="btn btn-start btn-hover"
+            >
               {isBreakTime ? "Skip Break" : "Start"}
             </button>
             {isBreakTime || (
@@ -156,10 +163,10 @@ const Timer = () => {
         )}
         {isActive && (
           <>
-            <button onClick={handleStopTime} className="btn">
+            <button onClick={handleStopTime} className="btn btn-hover">
               Pause
             </button>
-            <button onClick={handleAddTime} className="btn btn-5min">
+            <button onClick={handleAddTime} className="btn btn-5min btn-hover">
               <RxClock className="clock-icon" /> Add 5 min
             </button>
           </>

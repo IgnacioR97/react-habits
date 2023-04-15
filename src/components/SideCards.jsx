@@ -7,7 +7,7 @@ const SideCards = () => {
   return (
     <div className="side-cards">
       <div className="cards-flex">
-        <button className="export-btn">
+        <button className="export-btn btn-hover">
           <RxUpload /> Export
         </button>
       </div>
