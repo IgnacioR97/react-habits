@@ -165,7 +165,7 @@ main {
 
   display: flex;
   flex-direction: column;
-  padding-top: 6.2rem;
+  padding-top: 8.2rem;
   align-items: center;
   gap: 1rem;
   border-top-right-radius: 20px;
@@ -274,9 +274,9 @@ main {
 
 .logo {
   z-index: 2;
-  width: 16rem;
-  height: 6rem;
+  width: 92%;
   top: 5.5rem;
+  margin-bottom: 1.4rem;
 }
 
 /* Toolbar */
@@ -353,7 +353,7 @@ select .toolbar-hover .toolbar-text,
 }
 
 .toolbar-hover:hover .toolbar-text {
-  transition-delay: 1.2s;
+  transition-delay: 0.8s;
   opacity: 1;
 }
 
@@ -910,4 +910,97 @@ select .toolbar-hover .toolbar-text,
 
 .selector.active {
   background-color: var(--color-primary);
+}
+
+/* //////////////////// FORMS //////////////////// */
+.form-container {
+  width: 1200rem;
+  margin: 9.8rem auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  /* height: 100vh; */
+}
+
+.form {
+  width: 100%;
+  max-width: 40rem;
+  padding: 2.2rem;
+  background-color: #ffffff00;
+  opacity: 0.86;
+  border-radius: 15px;
+  box-shadow: 0 2rem 10rem rgba(0, 0, 0, 0.14);
+  font-family: 'Lato', sans-serif;
+}
+
+.form-logo {
+  width: 55%;
+  margin-bottom: 2.4rem;
+}
+
+.form-title {
+  font-size: 2.2rem;
+  color: #555;
+  font-weight: 800;
+}
+
+.form-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 27rem;
+  margin: 0 auto;
+}
+
+.form-input {
+  border: 0;
+  background-color: transparent;
+  border-bottom: 2px solid #3D5AF2;
+  padding: 0.5rem 0;
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+}
+
+.form-input::placeholder {
+  color: #aaa;
+}
+
+.form-input:focus {
+  outline: none;
+  border-bottom: 2px solid #2b3fa9;
+}
+
+.form-btn {
+  border: 0;
+  background-color: #3D5AF2;
+  color: #FBFBFC;
+  font-size: 1.4rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  border-radius: 25px;
+  padding: 1rem 2rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  cursor: pointer;
+  transition: all 0.3s linear;
+  letter-spacing: 0.8px;
+}
+
+.form-btn:hover {
+  background-color: #2b3fa9;
+}
+
+.form p {
+  font-size: 1.4rem;
+  color: #555;
+  margin-top: 1rem;
+}
+
+.signin-btn {
+  margin-left: 0.3rem;
+  color: #3D5AF2;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
 }
