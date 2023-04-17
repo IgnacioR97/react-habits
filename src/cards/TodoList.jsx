@@ -14,7 +14,7 @@ const getLocalStorage = () => {
 function TodoList() {
   const [item, setItem] = useState("");
   const [items, setItems] = useState(getLocalStorage());
-  const [classValues, setClassValues] = useState("input");
+  const [classValues, setClassValues] = useState("icon-add");
   const [editItemIndex, setEditItemIndex] = useState(-1);
   const [priorityIndex, setPriorityIndex] = useState(-1);
   const [newText, setNewText] = useState("Add Task");
@@ -35,7 +35,7 @@ function TodoList() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (item) {
-      setClassValues("input");
+      setClassValues("icon-add");
       if (editItemIndex === -1) {
         setItems([...items, { item: item, id: Date.now() }]);
         setNewText("Edit Task");
@@ -48,7 +48,7 @@ function TodoList() {
       }
       setItem("");
     } else {
-      setClassValues("input error");
+      setClassValues("icon-add error");
     }
   };
 
@@ -135,7 +135,7 @@ function TodoList() {
       <form className="add-task" onSubmit={handleSubmit}>
         {editItemIndex === -1 ? (
           <button className="btn-add btn-hover" onClick={handleSubmit}>
-            <HiPlus className="icon-add" />
+            <HiPlus className={classValues} />
           </button>
         ) : (
           <button
@@ -149,7 +149,7 @@ function TodoList() {
           type="text"
           placeholder={newText}
           ref={inputRef}
-          className={classValues}
+          className="input"
           value={item}
           onChange={(e) => setItem(e.target.value)}
         />

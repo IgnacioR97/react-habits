@@ -495,6 +495,7 @@ select .toolbar-hover .toolbar-text,
   border-bottom: 2px solid var(--color-primary);
   padding-bottom: 0.8rem;
   margin-bottom: 2rem;
+  font-weight: 500;
 }
 
 .flex {
@@ -580,6 +581,11 @@ select .toolbar-hover .toolbar-text,
   height: 2.5rem;
   border-radius: 5px;
   font-size: 1rem;
+  transition: 0.3s linear all;
+}
+
+.icon-add.error {
+  transform: rotate(-180deg);
 }
 
 .input {
@@ -589,14 +595,6 @@ select .toolbar-hover .toolbar-text,
   background-color: transparent;
   margin-left: 0.2rem;
   width: 100%;
-}
-
-.input.error {
-  border-color: #e24f4fb4;
-}
-
-.input.error:focus {
-  border-color: #e24f4fb4;
 }
 
 .input:focus {
@@ -845,6 +843,7 @@ select .toolbar-hover .toolbar-text,
 .modal.modal--export {
   height: 60rem;
   width: 120rem;
+  display: inline-block;
 }
 
 /* //////////////////// TIPS MODAL //////////////////// */
