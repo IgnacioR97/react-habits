@@ -920,17 +920,16 @@ select .toolbar-hover .toolbar-text,
   justify-content: center;
   align-items: center;
   text-align: center;
-  /* height: 100vh; */
 }
 
 .form {
   width: 100%;
-  max-width: 40rem;
-  padding: 2.2rem;
-  background-color: #ffffff00;
+  max-width: 36rem;
+  padding: 2.8rem;
   opacity: 0.86;
   border-radius: 15px;
-  box-shadow: 0 2rem 10rem rgba(0, 0, 0, 0.14);
+  box-shadow: 0 2rem 7rem rgba(0, 0, 0, 0.09);
+  border: #cecece 1px solid;
   font-family: 'Lato', sans-serif;
 }
 
@@ -957,7 +956,7 @@ select .toolbar-hover .toolbar-text,
   border: 0;
   background-color: transparent;
   border-bottom: 2px solid #3D5AF2;
-  padding: 0.5rem 0;
+  padding: 0.9rem 0;
   margin-bottom: 2rem;
   font-size: 1.5rem;
 }

@@ -24,6 +24,11 @@ const Login = ({ setLoginActive }) => {
             className="form-input"
             name="email"
             value={email}
+            autoComplete="off"
+            data-lpignore="true"
+            data-form-type="other"
+            data-dashlane-rid="0e77bee4885ac6fe"
+            required
             onChange={(e) => setEmail(e.target.value)}
           />
           <input
@@ -33,15 +38,17 @@ const Login = ({ setLoginActive }) => {
             name="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            autoComplete="off"
+            data-lpignore="true"
+            data-form-type="other"
+            data-dashlane-rid="0e77bee4885ac6fe"
           />
           <button className="form-btn" formAction="submit">
             Login
           </button>
           <p>
             Don't have an account?
-            <a className="signin-btn" onClick={() => console.log("lmao")}>
-              Create one!
-            </a>
+            <a className="signin-btn">Create one!</a>
           </p>
         </div>
       </form>

@@ -53,7 +53,7 @@ const Timer = () => {
           if (mode === "light-theme") {
             progressBar.style.background = `conic-gradient(#d3d3d3 ${
               ((totalTime - updatedElapsedTime) / totalTime) * 360
-            }deg, #7AB5F8 ${
+            }deg, #8da3fc ${
               ((totalTime - updatedElapsedTime) / totalTime) * 360
             }deg)`;
           } else {
