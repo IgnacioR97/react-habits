@@ -24,11 +24,7 @@ const App = () => {
   const getWordCount = () => {
     const text = value.replace(/\s+/g, " ").trim();
     const words = text.split(" ").filter(Boolean);
-    if (value.length === 0) {
-      return 0;
-    } else {
-      return words.length;
-    }
+    return words.length;
   };
 
   return (
