@@ -9,6 +9,7 @@ const ExportModal = ({ setModal }) => {
       <div className="modal modal--export">
         <div className="modal-container">
           <input type="text" className="modal-title" />
+          <button className="save"></button>
         </div>
       </div>
     </>
