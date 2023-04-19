@@ -27,7 +27,6 @@ const Login = ({ setLoginActive }) => {
             autoComplete="off"
             data-lpignore="true"
             data-form-type="other"
-            data-dashlane-rid="0e77bee4885ac6fe"
             required
             onChange={(e) => setEmail(e.target.value)}
           />
@@ -41,7 +40,6 @@ const Login = ({ setLoginActive }) => {
             autoComplete="off"
             data-lpignore="true"
             data-form-type="other"
-            data-dashlane-rid="0e77bee4885ac6fe"
           />
           <button className="form-btn" formAction="submit">
             Login

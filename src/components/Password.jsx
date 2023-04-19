@@ -1,10 +1,5 @@
 import { useState } from "react";
 import logoLight from "../../src/logo-light.png";
-import { sha256 } from "crypto-js";
-
-const password = "mySuperSecretPassword";
-const hash = sha256(password).toString();
-console.log(hash);
 
 const Password = ({ setAccess }) => {
   const [password, setPassword] = useState("");
@@ -12,12 +7,12 @@ const Password = ({ setAccess }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (password) {
-      if (password === `@${code}yam`) {
+      if (password === `@${code}${newNum}`) {
         setAccess(true);
       }
     }
   };
-
+  let newNum = "yam";
   let code = "gleneagles";
 
   return (
@@ -33,6 +28,8 @@ const Password = ({ setAccess }) => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             autoComplete="off"
+            data-lpignore="true"
+            data-form-type="other"
           />
           <button className="form-btn" formAction="submit">
             Enter
