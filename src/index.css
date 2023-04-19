@@ -840,12 +840,6 @@ select .toolbar-hover .toolbar-text,
   align-items: center;
 }
 
-.modal.modal--export {
-  height: 60rem;
-  width: 120rem;
-  display: inline-block;
-}
-
 /* //////////////////// TIPS MODAL //////////////////// */
 .modal h4 {
   font-size: 2.4rem;
@@ -916,7 +910,7 @@ select .toolbar-hover .toolbar-text,
   background-color: var(--color-primary);
 }
 
-/* //////////////////// FORMS //////////////////// */
+/* //////////////////// LOGIN FORM //////////////////// */
 .form-container {
   width: 1200rem;
   margin: 9.8rem auto;
@@ -935,6 +929,11 @@ select .toolbar-hover .toolbar-text,
   box-shadow: 0 2rem 7rem rgba(0, 0, 0, 0.09);
   border: #cecece 1px solid;
   font-family: 'Lato', sans-serif;
+}
+
+.form-password {
+  border: none;
+  box-shadow: none;
 }
 
 .form-logo {
@@ -1006,4 +1005,67 @@ select .toolbar-hover .toolbar-text,
   font-weight: 600;
   cursor: pointer;
   text-decoration: underline;
+}
+
+/* //////////////////// EXPORT MODAL //////////////////// */
+.modal.modal--export {
+  height: 60rem;
+  width: 120rem;
+  display: inline-block;
+}
+
+.modal-export--container {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 4rem;
+  margin: 1.4rem 0 3.8rem 0;
+}
+
+.modal-input {
+  width: 30rem;
+  margin: 0;
+  font-size: 1.9rem;
+}
+
+.modal--export {
+  overflow-y: scroll;
+}
+
+.modal-export--main h2 {
+  font-size: 2.8rem;
+  color: #666;
+  text-align: center;
+}
+
+.export-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  gap: 2.8rem;
+}
+
+.export-item {
+  background-color: #f1f1f1;
+  box-shadow: 0px 10px 19px rgba(0, 0, 0, 0.09);
+  border-radius: 15px;
+}
+
+.export-text--block {
+  width: 25rem;
+  height: 20rem;
+  margin: 2.4rem auto;
+  background-color: #ddd;
+  border-radius: 10px;
+  align-self: center;
+}
+
+.export-item--title {
+  margin-top: 1.8rem;
+  font-size: 2.4rem;
+  line-height: 1.4;
+  font-weight: 400;
+  color: var(--main-text);
+  text-align: center;
 }
