@@ -2,10 +2,11 @@ import React, { useRef, useState } from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import CustomToolbar from "./CustomToolbar";
+import { useGlobalContext } from "../context";
 
 const App = () => {
   const [value, setValue] = useState("");
-  const [input, setInput] = useState("");
+  const { title, setTitle } = useGlobalContext();
   const inputRef = useRef(null);
 
   const handleChange = (newValue) => {
@@ -13,7 +14,7 @@ const App = () => {
   };
 
   const handleInput = (value) => {
-    setInput(value);
+    setTitle(value);
     if (value === "") {
       inputRef.current.style.width = "auto";
     } else {
@@ -38,7 +39,7 @@ const App = () => {
           data-form-type="other"
           ref={inputRef}
           onChange={(e) => handleInput(e.target.value)}
-          value={input}
+          value={title}
         />
         <p className="word-count">Word Count: {getWordCount()}</p>
         <ReactQuill

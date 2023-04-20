@@ -38,13 +38,11 @@ function TodoList() {
       setClassValues("icon-add");
       if (editItemIndex === -1) {
         setItems([...items, { item: item, id: Date.now() }]);
-        setNewText("Edit Task");
       } else {
         const newItems = [...items];
         newItems[editItemIndex].item = item;
         setItems(newItems);
         setEditItemIndex(-1);
-        setNewText("Add Task");
       }
       setItem("");
     } else {
@@ -147,9 +145,9 @@ function TodoList() {
         )}
         <input
           type="text"
-          placeholder={newText}
           ref={inputRef}
           className="input"
+          placeholder="Add Task"
           value={item}
           onChange={(e) => setItem(e.target.value)}
         />

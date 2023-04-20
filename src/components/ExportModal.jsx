@@ -1,6 +1,8 @@
 import { MdOutlineClose } from "react-icons/md";
+import { useGlobalContext } from "../context";
 
 const ExportModal = ({ setModal }) => {
+  const { title, setTitle } = useGlobalContext();
   const closeModal = () => {
     setModal(false);
   };
@@ -15,6 +17,8 @@ const ExportModal = ({ setModal }) => {
             className="modal-input form-input"
             placeholder="Title"
             autoComplete="off"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
           />
           <button className="export-btn btn-hover">Save</button>
         </div>
