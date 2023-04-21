@@ -7,6 +7,21 @@ const ExportModal = ({ setModal }) => {
     setModal(false);
   };
 
+  const data = [
+    {
+      id: 0,
+      title: "Mr.Clark Science project",
+    },
+    {
+      id: 1,
+      title: "New John Wick but I don't know how to save the economy",
+    },
+    {
+      id: 2,
+      title: "Fortnite lol",
+    },
+  ];
+
   return (
     <>
       <div className="background" onClick={closeModal}></div>
@@ -23,22 +38,17 @@ const ExportModal = ({ setModal }) => {
           <button className="export-btn btn-hover">Save</button>
         </div>
         <div className="modal-export--main">
-          <h2>Other files</h2>
+          <h2>Your files</h2>
           <ul className="export-list">
-            <li className="export-item">
-              <h5 className="export-item--title">Mr.Clark Science project</h5>
-              <div className="export-text--block"></div>
-            </li>
-            <li className="export-item">
-              <h5 className="export-item--title">
-                New John Wick but I don't know how to save the economy
-              </h5>
-              <div className="export-text--block"></div>
-            </li>
-            <li className="export-item">
-              <h5 className="export-item--title">Fortnite lol</h5>
-              <div className="export-text--block"></div>
-            </li>
+            {data.map((item) => {
+              const { id, title } = item;
+              return (
+                <li className="export-item" key={id}>
+                  <h5 className="export-item--title">{title}</h5>
+                  <div className="export-text--block"></div>
+                </li>
+              );
+            })}
           </ul>
         </div>
         <button className="close-btn btn-hover" onClick={closeModal}>
