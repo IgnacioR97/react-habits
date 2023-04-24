@@ -20,6 +20,14 @@ const ExportModal = ({ setModal }) => {
       id: 2,
       title: "Fortnite lol",
     },
+    {
+      id: 3,
+      title: "New Chapter",
+    },
+    {
+      id: 4,
+      title: "Lmao",
+    },
   ];
 
   return (
@@ -44,7 +52,9 @@ const ExportModal = ({ setModal }) => {
               const { id, title } = item;
               return (
                 <li className="export-item" key={id}>
-                  <h5 className="export-item--title">{title}</h5>
+                  <h5 className="export-item--title">
+                    {title.slice(0, 18)}...
+                  </h5>
                   <div className="export-text--block"></div>
                 </li>
               );

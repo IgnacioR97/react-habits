@@ -57,6 +57,7 @@ body {
   border: 2px solid #D9D0D0;
   border-radius: 25px;
   pointer-events: auto;
+  transition: 0.4s linear all;
 }
 
 /* Set the color and style of the scrollbar thumb when hovered */
@@ -64,7 +65,7 @@ body {
   background-color: #ccc;
   border-color: #ccc;
   cursor: pointer;
-  border: 5px solid #F8F8F8;
+  border: 5px solid #949494;
 }
 
 .dark-theme *::-webkit-scrollbar-thumb,
@@ -1012,6 +1013,8 @@ select .toolbar-hover .toolbar-text,
   height: 60rem;
   width: 120rem;
   display: inline-block;
+  border-radius: 6px;
+  overflow-y: scroll;
 }
 
 .modal-export--container {
@@ -1019,7 +1022,7 @@ select .toolbar-hover .toolbar-text,
   align-items: center;
   flex-direction: row;
   gap: 4rem;
-  margin: 1.4rem 0 3.8rem 0;
+  margin: -2.4rem 0 2.8rem 0;
 }
 
 .modal-input {
@@ -1028,14 +1031,11 @@ select .toolbar-hover .toolbar-text,
   font-size: 1.9rem;
 }
 
-.modal--export {
-  overflow-y: scroll;
-}
-
 .modal-export--main h2 {
   font-size: 2.8rem;
   color: #666;
   text-align: center;
+  margin-bottom: 2.4rem;
 }
 
 .export-list {
@@ -1043,29 +1043,31 @@ select .toolbar-hover .toolbar-text,
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   align-items: center;
-  gap: 2.8rem;
+  gap: 3.8rem;
   height: 8rem;
+  padding-bottom: 2.8rem;
 }
 
 .export-item {
   background-color: #f1f1f1;
-  box-shadow: 0px 10px 19px rgba(0, 0, 0, 0.09);
-  border-radius: 15px;
-  height: 35rem;
+  box-shadow: 0px 10px 19px rgba(0, 0, 0, 0.04);
+  border-radius: 10px;
+  border: 3px solid #bbb;
+  height: 28rem;
 }
 
 .export-text--block {
-  width: 25rem;
+  width: 22rem;
   height: 20rem;
-  margin: 2.4rem auto;
-  background-color: #ddd;
-  border-radius: 10px;
+  margin: 2rem auto;
+  background-color: #ffffff;
+  border-radius: 5px;
   align-self: center;
 }
 
 .export-item--title {
-  margin-top: 1.8rem;
-  font-size: 2.4rem;
+  margin-top: 1.4rem;
+  font-size: 2rem;
   line-height: 1.4;
   font-weight: 400;
   color: var(--main-text);
