@@ -1,4 +1,5 @@
 import { MdOutlineClose } from "react-icons/md";
+import { BiTrash } from "react-icons/bi";
 import { useGlobalContext } from "../context";
 
 const ExportModal = ({ setModal }) => {
@@ -46,20 +47,26 @@ const ExportModal = ({ setModal }) => {
           <button className="export-btn btn-hover">Save</button>
         </div>
         <div className="modal-export--main">
-          <h2>Your files</h2>
-          <ul className="export-list">
-            {data.map((item) => {
-              const { id, title } = item;
-              return (
-                <li className="export-item" key={id}>
-                  <h5 className="export-item--title">
-                    {title.slice(0, 18)}...
-                  </h5>
-                  <div className="export-text--block"></div>
-                </li>
-              );
-            })}
-          </ul>
+          <div className="cards">
+            <h2>Your files</h2>
+            <ul className="export-list">
+              {data.map((item) => {
+                const { id, title } = item;
+                return (
+                  <li className="export-item" key={id}>
+                    <h5 className="export-item--title">
+                      {title.slice(0, 20)}...
+                    </h5>
+                    <button className="export-remove">
+                      <BiTrash className="export-icon" />
+                    </button>
+                    <div className="export-text--block"></div>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+          <div className="history"></div>
         </div>
         <button className="close-btn btn-hover" onClick={closeModal}>
           <MdOutlineClose />
