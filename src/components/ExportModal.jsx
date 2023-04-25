@@ -25,9 +25,42 @@ const ExportModal = ({ setModal }) => {
       id: 3,
       title: "New Chapter",
     },
+    // {
+    //   id: 4,
+    //   title: "Lmao",
+    // },
+  ];
+
+  const history = [
+    {
+      id: 0,
+      title: "Tuesday, April 25, 8:39",
+      changes: "Hello this is the difference in files, I hope you like it.",
+    },
+    {
+      id: 1,
+      title: "Sunday, April 23, 12:19",
+      changes: "I added and changed some stuff, I hope you like it.",
+    },
+    {
+      id: 2,
+      title: "Tuesday, April 25, 8:39",
+      changes: "Hello this is the difference in files, I hope you like it.",
+    },
+    {
+      id: 3,
+      title: "Sunday, April 23, 12:19",
+      changes: "I added and changed some stuff, I hope you like it.",
+    },
     {
       id: 4,
-      title: "Lmao",
+      title: "Tuesday, April 25, 8:39",
+      changes: "Hello this is the difference in files, I hope you like it.",
+    },
+    {
+      id: 5,
+      title: "Sunday, April 23, 12:19",
+      changes: "I added and changed some stuff, I hope you like it.",
     },
   ];
 
@@ -48,7 +81,7 @@ const ExportModal = ({ setModal }) => {
         </div>
         <div className="modal-export--main">
           <div className="cards">
-            <h2>Your files</h2>
+            <h2>Your Files</h2>
             <ul className="export-list">
               {data.map((item) => {
                 const { id, title } = item;
@@ -66,7 +99,17 @@ const ExportModal = ({ setModal }) => {
               })}
             </ul>
           </div>
-          <div className="history"></div>
+          <div className="history">
+            {history.map((item) => {
+              const { id, title, changes } = item;
+              return (
+                <div className="history-card" key={id}>
+                  <h3>{title}</h3>
+                  <p>{changes}</p>
+                </div>
+              );
+            })}
+          </div>
         </div>
         <button className="close-btn btn-hover" onClick={closeModal}>
           <MdOutlineClose />
