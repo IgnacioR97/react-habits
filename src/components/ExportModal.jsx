@@ -25,10 +25,6 @@ const ExportModal = ({ setModal }) => {
       id: 3,
       title: "New Chapter",
     },
-    // {
-    //   id: 4,
-    //   title: "Lmao",
-    // },
   ];
 
   const history = [
@@ -100,15 +96,18 @@ const ExportModal = ({ setModal }) => {
             </ul>
           </div>
           <div className="history">
-            {history.map((item) => {
-              const { id, title, changes } = item;
-              return (
-                <div className="history-card" key={id}>
-                  <h3>{title}</h3>
-                  <p>{changes}</p>
-                </div>
-              );
-            })}
+            {/* <h2 className="history-title">Edit History</h2> */}
+            <div className="history-cards">
+              {history.map((item) => {
+                const { id, title, changes } = item;
+                return (
+                  <div className="history-card" key={id}>
+                    <h3>{title}</h3>
+                    <p>{changes}</p>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
         <button className="close-btn btn-hover" onClick={closeModal}>
