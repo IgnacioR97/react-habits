@@ -96,7 +96,7 @@ const ExportModal = ({ setModal }) => {
             </ul>
           </div>
           <div className="history">
-            {/* <h2 className="history-title">Edit History</h2> */}
+            <h2 className="history-title">Edit History</h2>
             <div className="history-cards">
               {history.map((item) => {
                 const { id, title, changes } = item;

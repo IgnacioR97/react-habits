@@ -1054,6 +1054,7 @@ select .toolbar-hover .toolbar-text,
   gap: 3.8rem;
   height: 10rem;
   width: 70rem;
+  z-index: 1000;
 }
 
 .export-item {
