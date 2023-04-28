@@ -4,11 +4,14 @@ import logoLight from "../../src/logo-light.png";
 const Login = ({ setLoginActive }) => {
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
+  const [values, setValues] = useState("form-btn");
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (password && email) {
       setLoginActive(false);
+    } else {
+      setValues("form-btn form-btn--error");
     }
   };
 
@@ -24,10 +27,7 @@ const Login = ({ setLoginActive }) => {
             className="form-input"
             name="email"
             value={email}
-            autoComplete="off"
-            data-lpignore="true"
-            data-form-type="other"
-            required
+            // required
             onChange={(e) => setEmail(e.target.value)}
           />
           <input
@@ -37,11 +37,8 @@ const Login = ({ setLoginActive }) => {
             name="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            autoComplete="off"
-            data-lpignore="true"
-            data-form-type="other"
           />
-          <button className="form-btn" formAction="submit">
+          <button className={values} formAction="submit">
             Login
           </button>
           <p>
