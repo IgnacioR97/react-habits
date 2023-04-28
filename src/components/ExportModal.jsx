@@ -21,10 +21,10 @@ const ExportModal = ({ setModal }) => {
       id: 2,
       title: "Fortnite lol",
     },
-    {
-      id: 3,
-      title: "New Chapter",
-    },
+    // {
+    //   id: 3,
+    //   title: "New Chapter",
+    // },
   ];
 
   const history = [
@@ -77,7 +77,7 @@ const ExportModal = ({ setModal }) => {
         </div>
         <div className="modal-export--main">
           <div className="cards">
-            <h2>Your Files</h2>
+            {data.length === 0 ? <h2>No Files Yet</h2> : <h2>Your Files</h2>}
             <ul className="export-list">
               {data.map((item) => {
                 const { id, title } = item;
@@ -96,7 +96,6 @@ const ExportModal = ({ setModal }) => {
             </ul>
           </div>
           <div className="history">
-            <h2 className="history-title">Edit History</h2>
             <div className="history-cards">
               {history.map((item) => {
                 const { id, title, changes } = item;
