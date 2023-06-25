@@ -1,6 +1,6 @@
 import { MdOutlineClose } from "react-icons/md";
 import { BiTrash } from "react-icons/bi";
-import { useGlobalContext } from "../context";
+import { useGlobalContext } from "../Context";
 
 const ExportModal = ({ setModal }) => {
   const { title, setTitle } = useGlobalContext();

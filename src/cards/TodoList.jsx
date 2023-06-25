@@ -17,7 +17,6 @@ function TodoList() {
   const [classValues, setClassValues] = useState("icon-add");
   const [editItemIndex, setEditItemIndex] = useState(-1);
   const [priorityIndex, setPriorityIndex] = useState(-1);
-  const [newText, setNewText] = useState("Add Task");
 
   const listRef = useRef(null);
   const inputRef = useRef(null);
@@ -75,6 +74,10 @@ function TodoList() {
   };
 
   const switchPriority = (index1, index2, isPriority) => {
+    if (items.length <= 1) {
+      return; // Do nothing if there is only one item
+    }
+
     const newItems = [...items];
     [newItems[index1], newItems[index2]] = [newItems[index2], newItems[index1]];
     setItems(newItems);
